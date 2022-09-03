@@ -3,7 +3,9 @@ h1, h2, h3, h4, a, p {
 }
 
 header {
+    position: fixed;
     height: 10%;
+    width: 100%;
     background-color: #41426F;
 }
 h1 {
@@ -12,4 +14,36 @@ h1 {
     font-size: 40px;
     font-weight: bold;
     color: #FFFFFF;
+}
+
+aside {
+    position: fixed;
+    bottom: 0px;
+    height: 90%;
+    width: 20%;
+    background-color: #41426F;
+}
+
+aside h2 {
+    padding-top: 22px;
+    margin-left: 6%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+
+aside input {
+    width: 88%;
+    height: 38px;
+    padding-left: 6%;
+    background-color: #41426F;
+    border-radius: 5px;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+.search-button {
+    background-color: #41426F;
+    color: #FFFFFF;
+    border: none;
 }
