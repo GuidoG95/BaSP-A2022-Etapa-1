@@ -1,3 +1,7 @@
+* {
+    box-sizing: border-box;
+}
+
 h1, h2, h3, h4, a, p {
     font-family: 'Roboto';
 }
@@ -22,12 +26,13 @@ aside {
     bottom: 0px;
     height: 90%;
     width: 20%;
+    padding-left: 16px;
+    padding-right: 16px;
     background-color: #41426F;
 }
 
 aside h2 {
     margin-top: 22px;
-    margin-left: 16px;
     width: 100px;
     border-bottom: 3px solid #AACE9B;
     font-size: 40px;
@@ -46,26 +51,24 @@ aside input {
 
 .search {
     margin-top: 25px;
-    margin-left: 16px;
-    margin-right: 16px;
 }
 
 .search-button {
     margin-top: -28px;
-    margin-left: 22px;
+    margin-left: 5px;
     background-color: #41426F;
     color: #FFFFFF;
     border: none;
 }
 
-aside a {
+nav li {
     width: 100%;
     height: 50px;
     margin-top: 25px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding: 10px 0;
     background-color: #FFFFFF;
     border-radius: 5px;
+    text-align: center;
     font-size: 15px;
     font-weight: bold;
     color: #41426F;
@@ -76,7 +79,6 @@ aside a {
  aside h3 {
     font-size: 15px;
     font-weight: bold;
-    margin-left: 16px;
     margin-top: 20%;
     color: #FFFFFF;
     border-bottom: 3px solid #AACE9B;
@@ -86,8 +88,6 @@ aside a {
 .description {
     font-size: 15px;
     font-weight: bold;
-    margin-left: 16px;
-    margin-right: 16px;
     margin-top: 8%;
     margin-bottom: 6%;
     color: #FFFFFF;
@@ -95,7 +95,6 @@ aside a {
 
 .middle {
     width: 100%;
-    /* margin-left: 16px; */
     margin-right: 16px;
     border-top: 1px solid #AACE9B;
     border-bottom: 1px solid #AACE9B;
@@ -104,28 +103,27 @@ aside a {
 aside p {
     font-size: 14px;
     font-weight: bold;
-    margin-left: 16px;
-    margin-right: 16px;
     margin-top: 2%;
     margin-bottom: 2%;
     color: #FFFFFF;
 }
 
 main {
-    padding-left: 20%;
-    padding-top: 10%;
+    width: 100%;
+    padding-left: 25%;
+    padding-right: 2%;
+    padding-top: 5%;
 }
 
 #sect-1 {
-    width: 90%;
-    margin-left: 5%;
-    margin-right: -5%;
+    margin-top: 50px;
+    margin-bottom: 50px;
     border-top: 3px solid #41426F;
 }
 
 #sect-1 h2 {
     padding-top: 50px;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
     color: #41426F;
@@ -133,7 +131,7 @@ main {
 
 #sect-1 h3 {
     padding-top: 12px;
-    font-size: 23px;
+    font-size: 20px;
     text-transform: uppercase;
     color: #41426F;
 }
@@ -147,14 +145,90 @@ main {
 
 #sect-1 img {
     width: 59%;
-    padding-left: 41%;
+    margin-left: 41%;
     margin-top: -274px;
+}
+
+#sect-1 a {
+    margin-top: 100px;
+    background-color: #FFFFFF;
+    box-shadow: 0px 4px 4px #000000;
+}
+
+#sect-2 {
+    padding-top: 50px;
+    border-top: 3px solid #41426F;
+}
+
+#sect-2 h3 {
+    padding-left: 70px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#sect-2 img {
+    margin-top: -50px;
+}
+
+#sect-2 p {
+    margin-left: 70px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+article {
+    display: inline-block;
+    width: 40%;
+    margin-left: 90px;
+    margin-bottom: 80px;
+}
+
+#sect-3 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-top: 2px solid #41426F;
+    border-bottom: 2px solid #41426F;
+}
+
+#sect-3 h3 {
+    width: 372px;
+    margin-left: 20px;
+    font-size: 40;
+    font-weight: bold;
+    color: #41426F;
+    border-bottom: 3px solid #41426F;
+}
+
+#sect-3 li {
+    display: inline-block;
+    width: 40%;
+    margin-left: 57px;
+    margin-top: 26px;
+}
+
+#sect-3 h4 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+#sect-3 p {
+    font-size: 20px;
+    color: #41426F;
+}
+
+#form {
+    width: 40%;
+    margin-left: 30%;
+    background-color: #AACE9B;
+    border-radius: 20px;
 }
 
 footer {
     position: relative;
     height: 147px;
-    width: 80%;
+    width: 100%;
     padding-left: 20%;
     background-color: #41426F;
     color: #FFFFFF;
@@ -176,7 +250,7 @@ footer img {
     padding-left: 4%;
 }
 
-.copyright {
+footer p {
     padding-left: 32%;
     padding-top: 42px;
 }
