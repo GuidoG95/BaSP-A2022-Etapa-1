@@ -2,7 +2,7 @@
     box-sizing: border-box;
 }
 
-h1, h2, h3, h4, a, p {
+h1, h2, h3, h4, a, p, form, option, textarea, li {
     font-family: 'Roboto';
 }
 
@@ -61,7 +61,7 @@ aside input {
     border: none;
 }
 
-nav li {
+nav a {
     width: 100%;
     height: 50px;
     margin-top: 25px;
@@ -73,19 +73,25 @@ nav li {
     font-weight: bold;
     color: #41426F;
     text-decoration-line: none;
+    display: inline-block;
     box-shadow: 0px 4px 4px #000000;
 }
 
+nav a:hover {
+    background-color: #AACE9B;
+    color: #FFFFFF;
+}
+
  aside h3 {
+    margin-top: 100px;
     font-size: 15px;
     font-weight: bold;
-    margin-top: 20%;
     color: #FFFFFF;
     border-bottom: 3px solid #AACE9B;
     width: 81px;
 }
 
-.description {
+.gigatech {
     font-size: 15px;
     font-weight: bold;
     margin-top: 8%;
@@ -123,6 +129,7 @@ main {
 
 #sect-1 h2 {
     padding-top: 50px;
+    margin-left: 20px;
     font-size: 30px;
     font-weight: bold;
     text-transform: uppercase;
@@ -131,6 +138,7 @@ main {
 
 #sect-1 h3 {
     padding-top: 12px;
+    margin-left: 20px;
     font-size: 20px;
     text-transform: uppercase;
     color: #41426F;
@@ -139,20 +147,37 @@ main {
 #sect-1 p {
     width: 35%;
     margin-top: 12px;
+    margin-left: 20px;
     font-size: 21px;
+    line-height: 1.3;
     color: #41426F;
 }
 
 #sect-1 img {
     width: 59%;
     margin-left: 41%;
-    margin-top: -274px;
+    margin-top: -301px;
 }
 
 #sect-1 a {
-    margin-top: 100px;
+    padding: 15px 33px;
+    margin-top: -47px;
+    margin-left: 260px;
     background-color: #FFFFFF;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: #41426F;
+    text-decoration-line: none;
+    text-align: center;
     box-shadow: 0px 4px 4px #000000;
+    display: inline-block;
+}
+
+#sect-1 a:hover {
+    background-color: #AACE9B;
+    color: #FFFFFF;
 }
 
 #sect-2 {
@@ -163,6 +188,7 @@ main {
 #sect-2 h3 {
     padding-left: 70px;
     font-size: 30px;
+    color: #000000;
     font-weight: bold;
 }
 
@@ -179,7 +205,7 @@ main {
 
 article {
     display: inline-block;
-    width: 40%;
+    width: 35%;
     margin-left: 90px;
     margin-bottom: 80px;
 }
@@ -205,6 +231,7 @@ article {
     width: 40%;
     margin-left: 57px;
     margin-top: 26px;
+    list-style-image: url(/Semana-03/assests/arrow-icon.png);
 }
 
 #sect-3 h4 {
@@ -220,9 +247,55 @@ article {
 
 #form {
     width: 40%;
-    margin-left: 30%;
+    height: 465px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 30px;
     background-color: #AACE9B;
     border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #41426F;
+}
+
+form li {
+    display: inline-block;
+    width: 49%;
+}
+
+#name, #email, #contact select, #message {
+    width: 100%;
+    height: 37px;
+    margin-top: 7px;
+    background-color: #AACE9B;
+    border: 1px solid #41426F;
+    border-radius: 4px;
+}
+
+#contact {
+    margin-top: 8px;
+}
+
+option {
+    background-color: #FFFFFF;
+    height: 37px;
+}
+
+#message-title {
+    margin-top: 103px;
+}
+
+#message {
+    height: 102px;
+    vertical-align: text-top;
+}
+
+textarea {
+    resize: none;
 }
 
 footer {
@@ -232,6 +305,68 @@ footer {
     padding-left: 20%;
     background-color: #41426F;
     color: #FFFFFF;
+}
+
+#send {
+    width: 255px;
+    height: 50px;
+    margin-top: 25px;
+    text-align: center;
+    font-size: 15;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    color: #41426F;
+    border: none;
+    border-radius: 5px;
+    float: right;
+    box-shadow: 0px 4px 4px #000000;
+}
+
+#send:hover {
+    background-color: #41426F;
+    color: #FFFFFF;
+}
+
+#sect-4 {
+    border-top: 3px solid #41426F;
+    padding: 20px 20px 20px 20px;
+}
+
+#sect-4 h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #41426F;
+}
+
+#sect-4 p {
+    font-size: 24px;
+    color: #41426F;
+}
+
+#content {
+    width: 30%;
+}
+
+#sect-5 {
+    border-top: 3px solid #41426F;
+}
+
+#sect-5 h2 {
+    font-size: 40px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+#sect-5 li {
+    font-size: 15px;
+    color: #41426F;
+}
+
+#columns {
+    display: inline-block;
+    width: 25%;
 }
 
 footer img {
