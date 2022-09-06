@@ -40,25 +40,29 @@ aside h2 {
     color: #FFFFFF;
 }
 
-aside input {
+.search {
     width: 100%;
-    height: 38px;
-    padding-left: 12%;
+    margin-top: 25px;
     background-color: #41426F;
     border-radius: 5px;
     border: 1px solid #FFFFFF;
 }
 
-.search {
-    margin-top: 25px;
+aside input {
+    width: 85%;
+    height: 38px;
+    background-color: rgba(0, 0, 0, 0.0);
+    color: #FFFFFF;
+    border: none;
+    display: inline;
 }
 
 .search-button {
-    margin-top: -28px;
-    margin-left: 5px;
+    width: 12%;
     background-color: #41426F;
     color: #FFFFFF;
     border: none;
+    display: inline;
 }
 
 nav a {
@@ -157,6 +161,7 @@ main {
     width: 59%;
     margin-left: 41%;
     margin-top: -290px;
+    margin-bottom: -34px;
 }
 
 #sect-1 a {
@@ -220,7 +225,7 @@ article {
 #sect-3 h3 {
     width: 372px;
     margin-left: 20px;
-    font-size: 40;
+    font-size: 40px;
     font-weight: bold;
     color: #41426F;
     border-bottom: 3px solid #41426F;
