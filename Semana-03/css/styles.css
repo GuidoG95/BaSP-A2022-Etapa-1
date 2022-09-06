@@ -43,7 +43,7 @@ aside h2 {
 aside input {
     width: 100%;
     height: 38px;
-    padding-left: 10%;
+    padding-left: 12%;
     background-color: #41426F;
     border-radius: 5px;
     border: 1px solid #FFFFFF;
@@ -74,7 +74,7 @@ nav a {
     color: #41426F;
     text-decoration-line: none;
     display: inline-block;
-    box-shadow: 0px 4px 4px #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 nav a:hover {
@@ -149,14 +149,14 @@ main {
     margin-top: 12px;
     margin-left: 20px;
     font-size: 21px;
-    line-height: 1.3;
+    line-height: 1.1;
     color: #41426F;
 }
 
 #sect-1 img {
     width: 59%;
     margin-left: 41%;
-    margin-top: -301px;
+    margin-top: -290px;
 }
 
 #sect-1 a {
@@ -171,7 +171,7 @@ main {
     color: #41426F;
     text-decoration-line: none;
     text-align: center;
-    box-shadow: 0px 4px 4px #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     display: inline-block;
 }
 
@@ -205,7 +205,7 @@ main {
 
 article {
     display: inline-block;
-    width: 35%;
+    width: 38%;
     margin-left: 90px;
     margin-bottom: 80px;
 }
@@ -226,12 +226,15 @@ article {
     border-bottom: 3px solid #41426F;
 }
 
-#sect-3 li {
+#sect-3 ul {
     display: inline-block;
-    width: 40%;
+    width: 46%;
+    list-style-image: url('../assests/arrow-icon.png');
+}
+
+#sect-3 li {
     margin-left: 57px;
     margin-top: 26px;
-    list-style-image: url(/Semana-03/assests/arrow-icon.png);
 }
 
 #sect-3 h4 {
@@ -298,15 +301,6 @@ textarea {
     resize: none;
 }
 
-footer {
-    position: relative;
-    height: 147px;
-    width: 100%;
-    padding-left: 20%;
-    background-color: #41426F;
-    color: #FFFFFF;
-}
-
 #send {
     width: 255px;
     height: 50px;
@@ -319,7 +313,7 @@ footer {
     border: none;
     border-radius: 5px;
     float: right;
-    box-shadow: 0px 4px 4px #000000;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
 #send:hover {
@@ -329,7 +323,7 @@ footer {
 
 #sect-4 {
     border-top: 3px solid #41426F;
-    padding: 20px 20px 20px 20px;
+    padding: 45px 20px 45px 20px;
 }
 
 #sect-4 h2 {
@@ -343,6 +337,21 @@ footer {
 #sect-4 p {
     font-size: 24px;
     color: #41426F;
+    line-height: 1.2;
+}
+
+#sect-4 div {
+    float: left;
+    width: 31%;
+}
+
+#sect-4 img {
+    margin-top: 2px;
+    float: right;
+}
+
+#second-paragraph {
+    margin-top: 225px;
 }
 
 #content {
@@ -351,22 +360,54 @@ footer {
 
 #sect-5 {
     border-top: 3px solid #41426F;
+    padding-top: 43px;
+    padding-left: 20px;
+    padding-bottom: 200px;
 }
 
 #sect-5 h2 {
+    margin-top: 10px;
     font-size: 40px;
     font-weight: bold;
     color: #41426F;
 }
 
+#sect-5 ul {
+    list-style-image: url('../assests/arrow-icon.png');
+    margin-left: 21px;
+}
+
 #sect-5 li {
     font-size: 15px;
+    font-weight: bold;
+    line-height: 4.0;
     color: #41426F;
 }
 
-#columns {
+#sect-5 span {
     display: inline-block;
-    width: 25%;
+    width: 28%;
+}
+
+#company {
+    padding-left: 100px;
+    margin-right: 100px;
+    border-left: 2px solid #41426F;
+}
+
+#support {
+    padding-left: 150px;
+    border-left: 2px solid #41426F;
+}
+
+footer {
+    position: relative;
+    bottom: -1px;
+    height: 147px;
+    width: 100%;
+    padding-left: 20%;
+    background-color: #41426F;
+    color: #FFFFFF;
 }
 
 footer img {
