@@ -14,6 +14,10 @@ git clone https://github.com/GuidoG95/BaSP-A2022-Etapa-1
 1- Open "Semana-01" folder.
 
 2- Run index.html on your browser.
+
+OR
+
+Open: https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html
 ```
 
 ## Become a Software Developer by RadiumRocket
