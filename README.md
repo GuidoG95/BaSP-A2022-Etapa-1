@@ -24,4 +24,6 @@ git clone https://github.com/GuidoG95/BaSP-A2022-Etapa-1
 -Week 2: make the html file corresponding to the desktop landing page of the previous week activity.
 
 -Week 3: add style to the html file using css.
+
+-Week 4: remake the style of the html file, now using flexbox.
 ```
