@@ -1,0 +1,268 @@
+main {
+    width: 100%;
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-top: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+#trackgenix {
+    width: 100%;
+    margin-top: 26px;
+    margin-bottom: 50px;
+    border-top: 3px solid #41426F;
+    display: flex;
+    flex-direction: column;
+}
+
+#trackgenix h2 {
+    padding-top: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #41426F;
+}
+
+#trackgenix h3 {
+    padding-top: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #41426F;
+}
+
+#trackgenix p {
+    margin-top: 9px;
+    font-size: 21px;
+    line-height: 1.1;
+    color: #41426F;
+}
+
+#trackgenix img {
+    margin-top: 50px;
+}
+
+.learn-more-button {
+    width: 147px;
+    height: 47px;
+    padding: 15px;
+    margin-top: -59px;
+    margin-left: auto;
+    margin-right: 8px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    order: 2;
+}
+
+#trackgenix a:hover {
+    background-color: #AACE9B;
+    color: #FFFFFF;
+}
+
+#what-we-do {
+    padding-top: 50px;
+    padding-bottom: 70px;
+    border-top: 3px solid #41426F;
+    display: flex;
+    flex-direction: column;
+}
+
+#what-we-do h3 {
+    padding-left: 70px;
+    font-size: 30px;
+    color: #000000;
+    font-weight: bold;
+}
+
+#what-we-do img {
+    margin-top: -50px;
+}
+
+#what-we-do p {
+    margin-left: 70px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+article {
+    margin-bottom: 35px;
+}
+
+#why-use-trackgenix {
+    padding-top: 26px;
+    padding-bottom: 52px;
+    border-top: 2px solid #41426F;
+    border-bottom: 2px solid #41426F;
+    display: flex;
+    flex-direction: column;
+}
+
+#why-use-trackgenix h3 {
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+#why-use-trackgenix ul {
+    list-style-image: url('../assets/arrow-icon.png');
+    margin-left: 21px;
+}
+
+#why-use-trackgenix h4 {
+    margin-top: 52px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+#why-use-trackgenix p {
+    margin-top: 26px;
+    font-size: 20px;
+    color: #41426F;
+}
+
+#form {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    background-color: #AACE9B;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #41426F;
+    display: flex;
+    flex-direction: column;
+}
+
+#form input {
+    margin-bottom: 10px;
+}
+
+#name, #email, #contact select, #message {
+    width: 100%;
+    height: 37px;
+    margin-top: 7px;
+    background-color: #AACE9B;
+    border: 1px solid #41426F;
+    border-radius: 4px;
+}
+
+#contact {
+    margin-top: 8px;
+}
+
+option {
+    background-color: #FFFFFF;
+    height: 37px;
+}
+
+#message-title {
+    margin-top: 21px;
+}
+
+#message {
+    height: 68px;
+    vertical-align: text-top;
+}
+
+textarea {
+    resize: none;
+}
+
+#send {
+    width: 100px;
+    height: 24px;
+    margin-top: 9px;
+    margin-left: auto;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    color: #41426F;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    order: 2;
+}
+
+#send:hover {
+    background-color: #41426F;
+    color: #FFFFFF;
+}
+
+#about-us {
+    border-top: 2px solid #41426F;
+    width: 100%;
+    padding: 38px 0px 38px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#about-us h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #41426F;
+}
+
+#about-us div {
+    display: flex;
+}
+
+#about-us p {
+    font-size: 24px;
+    color: #41426F;
+    line-height: 1.2;
+}
+
+#mobile-about-us-img {
+    margin-right: 16px;
+}
+
+#desktop-about-us-img {
+    display: none;
+}
+
+#products-company-support {
+    border-top: 2px solid #41426F;
+    padding-bottom: 200px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#products-company-support h2 {
+    margin-top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+#products-company-support ul {
+    list-style-image: url('../assets/arrow-icon.png');
+    margin-left: 21px;
+}
+
+#products-company-support li {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 4.0;
+    color: #41426F;
+}
+
+#products, #company, #support {
+    width: 100%;
+    padding: auto;
+    border-bottom: 2px solid #41426F;
+}

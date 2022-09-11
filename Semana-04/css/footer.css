@@ -1,0 +1,29 @@
+footer {
+    position: relative;
+    bottom: 0px;
+    height: 147px;
+    width: 100%;
+    background-color: #41426F;
+    color: #FFFFFF;
+}
+
+footer img {
+    padding-top: 20px;
+}
+
+#fb {
+    margin-left: 451px;
+}
+
+#ig {
+    margin-left: 88px;
+}
+
+#tw {
+    margin-left: 88px;
+}
+
+footer p {
+    padding-top: 42px;
+    text-align: center;
+}

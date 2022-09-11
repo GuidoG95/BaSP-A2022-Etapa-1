@@ -8,12 +8,18 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
         <link rel="stylesheet" href="./css/reset.css">
         <link rel="stylesheet" href="./css/styles.css">
+        <link rel="stylesheet" href="./css/header.css">
+        <link rel="stylesheet" href="./css/sidebar.css">
+        <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/footer.css">
+        <script src="https://kit.fontawesome.com/e0deaaf2c8.js" crossorigin="anonymous"></script>
     </head>
     <body>
         <header>
              <h1>Trackgenix</h1>
+             <i class="fa-solid fa-bars"></i>
         </header>
-        <aside>
+        <aside class="sidebar">
             <h2>
                 Menu
             </h2>
@@ -83,7 +89,7 @@
                     By tracking employee time and project progress, businesses can identify areas where improvements can be made.
                 </p>
                 <img src="assets/example-image.jpg" alt="This is an image about the business">
-                <a href="#">
+                <a href="#" class="learn-more-button">
                     Learn more
                 </a>
             </section>
@@ -214,38 +220,47 @@
                 </button>
             </form>
             <section id="about-us">
+                <h2>
+                    About us
+                </h2>
                 <div>
-                    <h2>
-                        About us
-                    </h2>
+                    <img src="assets/example-image-2-mobile.png" alt="This is an image related to about us" id="mobile-about-us-img">
                     <p>
                         Gigatech was founded in Silicon Valley in 2006. It is a privately held company that provides software development
                         services to other businesses.
                     </p>
                 </div>
-                <img src="assets/example-image-2.png" alt="This is an image related to about us">
+                <img src="assets/example-image-2.png" alt="This is an image related to about us" id="desktop-about-us-img">
                 <p id="second-paragraph">
                     The company's primary focus is on providing high quality software development services. However, they also offer other
                     services such as project management, consulting, and training.
                 </p>
             </section>
             <section id="products-company-support">
-                <div>
+                <div id="products">
                     <h2>
                         Products
                     </h2>
                     <ul>
                         <li>
-                            Functionalities
+                            <a href="#">
+                                Functionalities
+                            </a>
                         </li>
                         <li>
-                            Downloads
+                            <a href="#">
+                                Downloads
+                            </a>
                         </li>
                         <li>
-                            Integrations
+                            <a href="#">
+                                Integrations
+                            </a>
                         </li>
                         <li>
-                            Extras
+                            <a href="#">
+                                Extras
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -255,16 +270,24 @@
                     </h2>
                     <ul>
                         <li>
-                            About us
+                            <a href="#">
+                                About us
+                            </a>
                         </li>
                         <li>
-                            Customers
+                            <a href="#">
+                                Customers
+                            </a>
                         </li>
                         <li>
-                            Resources
+                            <a href="#">
+                                Resources
+                            </a>
                         </li>
                         <li>
-                            Blog
+                            <a href="#">
+                                Blog
+                            </a>
                         </li>
                     </ul>
                 </div>
@@ -274,16 +297,24 @@
                     </h2>
                     <ul>
                         <li>
-                            Help
+                            <a href="#">
+                                Help
+                            </a>
                         </li>
                         <li>
-                            Tutorials
+                            <a href="#">
+                                Tutorials
+                            </a>
                         </li>
                         <li>
-                            Api
+                            <a href="#">
+                                Api
+                            </a>
                         </li>
                         <li>
-                            Contact
+                            <a href="#">
+                                Contact
+                            </a>
                         </li>
                     </ul>
                 </div>
