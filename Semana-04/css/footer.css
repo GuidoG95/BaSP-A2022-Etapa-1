@@ -29,7 +29,20 @@ footer {
     margin-right: 0px;
 }
 
+.fa-facebook, .fa-instagram, .fa-twitter {
+    color: #FFFFFF;
+    font-size: 48px;
+}
+
 footer p {
     padding-top: 42px;
     align-items: center;
+}
+
+@media (min-width: 1024px) {
+
+    footer {
+        width: 80%;
+        margin-left: 20%;
+    }
 }

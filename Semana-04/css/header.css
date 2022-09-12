@@ -24,3 +24,10 @@ h1 {
 h1, .fa-bars {
     margin-bottom: 10px;
 }
+
+@media (min-width: 1024px) {
+
+    .fa-bars {
+        color: #41426F;
+    }
+}

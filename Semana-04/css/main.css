@@ -2,7 +2,7 @@ main {
     width: 100%;
     padding-left: 31px;
     padding-right: 31px;
-    padding-top: 200px;
+    padding-top: 150px;
     display: flex;
     flex-direction: column;
 }
@@ -42,15 +42,20 @@ main {
     margin-top: 50px;
 }
 
-#tablet-main-image {
+#tablet-main-image, #no-mobile-button {
     display: none;
+}
+
+#trackgenix div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 34px;
 }
 
 .learn-more-button {
     width: 147px;
     height: 47px;
     padding: 15px;
-    margin-right: 8px;
     background-color: #FFFFFF;
     border-radius: 5px;
     font-size: 15px;
@@ -58,6 +63,10 @@ main {
     text-align: center;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
     order: 2;
+}
+
+#mobile-learn-more {
+    margin: -59px 8px 0px auto;
 }
 
 #trackgenix a:hover {
@@ -93,7 +102,7 @@ main {
 }
 
 article {
-    width: 371px;
+    width: 353px;
     margin-bottom: 35px;
 }
 
@@ -220,12 +229,9 @@ textarea {
     flex-direction: column;
 }
 
-#tablet-about-us-img {
+#tablet-about-us-img, #desktop-about-us-img {
     display: none;
 
-}
-#desktop-about-us-img {
-    display: none;
 }
 
 .about-us-small {
@@ -289,9 +295,22 @@ textarea {
         padding-top: 143px;
     }
 
+    #mobile-learn-more {
+        display: none;
+    }
+
+    #no-mobile-button {
+        display: initial;
+        align-self: flex-end;
+    }
+
     #trackgenix {
         flex-direction: row;
         flex: 0 1 auto;
+    }
+
+    #trackgenix p {
+        margin-top: 10px;
     }
 
     #main-image {
@@ -312,14 +331,26 @@ textarea {
         height: 470px;
         margin-left: auto;
         margin-right: auto;
+        padding-top: 24px;
         display: flex;
-        flex-direction: column;
-        align-items: center;
         flex-wrap: wrap;
     }
 
+    .name-email {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .name-email span {
+        flex: 0 1 49%;
+    }
+
     #message-title {
-        margin-top: 95px;
+        margin-top: 100px;
+    }
+
+    #message {
+        height: 102px;
     }
 
     #send {
@@ -333,23 +364,53 @@ textarea {
 
     #tablet-about-us-img {
         display: initial;
+        margin-right: 33px;
+        margin-bottom: 39px;
     }
 
-    #product-company-support {
-        border-top: none;
+    #products-company-support {
+        border-top: 2px solid #41426F;
+        padding-top: 68px;
         flex-direction: initial;
         flex-wrap: wrap;
-        width: 250px;
+        justify-content: space-between;
     }
 
     #products, #company, #support {
-        width: initial;
+        flex: 1 1 auto;
         border-bottom: none;
+    }
+
+    #company {
+        border-left: 2px solid #41426F;
+        border-right: 2px solid #41426F;
     }
 }
 
 @media (min-width: 1024px) {
+
+    main {
+        width: 80%;
+        margin-left: 20%;
+    }
+
     .why-use-list {
         justify-content: space-evenly;
+    }
+
+    .about-us-desktop {
+        display: flex;
+    }
+
+    #mobile-about-us-img, #tablet-about-us-img {
+        display: none;
+    }
+
+    #desktop-about-us-img {
+        display: initial;
+        margin-left: 65px;
+    }
+    #second-paragraph {
+        margin-top: 20px;
     }
 }
