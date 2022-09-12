@@ -1,8 +1,8 @@
 footer {
     bottom: 0px;
-    height: 165px;
+    height: 143px;
     width: 100%;
-    padding-top: 10px;
+    padding-top: 19px;
     padding-bottom: 68px;
     background-color: #41426F;
     color: #FFFFFF;
@@ -30,6 +30,6 @@ footer {
 }
 
 footer p {
-    padding-top: 22px;
+    padding-top: 42px;
     align-items: center;
 }
