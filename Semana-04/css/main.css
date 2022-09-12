@@ -83,6 +83,12 @@ main {
     justify-content: space-evenly;
 }
 
+#what-we-do div {
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
 #what-we-do h3 {
     padding-left: 70px;
     font-size: 30px;
@@ -103,7 +109,6 @@ main {
 
 article {
     width: 353px;
-    margin-bottom: 35px;
 }
 
 #why-use-trackgenix {
@@ -258,7 +263,7 @@ textarea {
 
 #products-company-support {
     border-top: 2px solid #41426F;
-    padding-bottom: 200px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -408,6 +413,7 @@ textarea {
 
     #desktop-about-us-img {
         display: initial;
+        max-width: 60%;
         margin-left: 65px;
     }
     #second-paragraph {
