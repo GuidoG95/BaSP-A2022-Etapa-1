@@ -399,6 +399,14 @@ textarea {
         margin-left: 20%;
     }
 
+    #tablet-main-image {
+        display: none;
+    }
+
+    #main-image {
+        display: initial;
+    }
+
     .why-use-list {
         justify-content: space-evenly;
     }

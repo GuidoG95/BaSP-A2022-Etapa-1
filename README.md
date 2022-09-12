@@ -2,21 +2,21 @@
 
 Trackgenix is an app to boost the produtctivity of your business.
 
-## Downlad
+## How to use
+
+- Download.
 
 ```
 git clone https://github.com/GuidoG95/BaSP-A2022-Etapa-1
 ```
 
-## How to use
+- Open "Semana-01" folder.
 
-1- Open "Semana-01" folder.
+- Run index.html on your browser.
 
-2- Run index.html on your browser.
+## Try it on your browser
 
-Or
-
-To open on your browser [click here.](https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html)
+To try the app on your browser [click here](https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html).
 
 ## Become a Software Developer by RadiumRocket
 
