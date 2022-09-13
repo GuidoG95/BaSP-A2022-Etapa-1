@@ -1,0 +1,12 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, a, p, form, option, textarea, li {
+    font-family: 'Roboto';
+}
+
+a {
+    text-decoration-line: none;
+    color: #41426F;
+}

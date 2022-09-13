@@ -1,0 +1,432 @@
+main {
+    width: 100%;
+    padding-left: 31px;
+    padding-right: 31px;
+    padding-top: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+#trackgenix {
+    width: 100%;
+    margin-top: 26px;
+    margin-bottom: 50px;
+    border-top: 2px solid #41426F;
+    display: flex;
+    flex-direction: column;
+}
+
+#trackgenix h2 {
+    padding-top: 5px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #41426F;
+}
+
+#trackgenix h3 {
+    padding-top: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #41426F;
+}
+
+#trackgenix p {
+    margin-top: 9px;
+    font-size: 21px;
+    line-height: 1.1;
+    color: #41426F;
+}
+
+#main-image {
+    margin-top: 50px;
+}
+
+#tablet-main-image, #no-mobile-button {
+    display: none;
+}
+
+#trackgenix div {
+    display: flex;
+    flex-direction: column;
+    margin-right: 34px;
+}
+
+.learn-more-button {
+    width: 147px;
+    height: 47px;
+    padding: 15px;
+    background-color: #FFFFFF;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    order: 2;
+}
+
+#mobile-learn-more {
+    margin: -59px 8px 0px auto;
+}
+
+#trackgenix a:hover {
+    background-color: #AACE9B;
+    color: #FFFFFF;
+}
+
+#what-we-do {
+    padding-bottom: 70px;
+    border-top: 2px solid #41426F;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+#what-we-do div {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+#what-we-do h3 {
+    padding-left: 70px;
+    font-size: 25px;
+    color: #000000;
+    font-weight: bold;
+}
+
+#what-we-do img {
+    margin-top: -50px;
+}
+
+#what-we-do p {
+    margin-left: 70px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+article {
+    width: 353px;
+}
+
+#why-use-trackgenix {
+    padding-top: 26px;
+    padding-bottom: 52px;
+    border-top: 2px solid #41426F;
+    border-bottom: 2px solid #41426F;
+}
+
+.why-use-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#why-use-trackgenix h3 {
+    width: 100%;
+    font-size: 40px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+#why-use-trackgenix ul {
+    list-style-image: url('../assets/arrow-icon.png');
+    margin-left: 21px;
+}
+
+#why-use-trackgenix h4 {
+    margin-top: 52px;
+    font-size: 24px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+#why-use-trackgenix p {
+    margin-top: 12px;
+    font-size: 20px;
+    color: #41426F;
+}
+
+#form {
+    width: 100%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-left: 26px;
+    padding-right: 26px;
+    padding-top: 10px;
+    padding-bottom: 13px;
+    background-color: #AACE9B;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #41426F;
+    display: flex;
+    flex-direction: column;
+}
+
+#form input {
+    margin-bottom: 10px;
+}
+
+#name, #email, #contact select, #message {
+    width: 100%;
+    height: 37px;
+    margin-top: 7px;
+    background-color: #AACE9B;
+    border: 1px solid #41426F;
+    border-radius: 4px;
+}
+
+#contact {
+    margin-top: 8px;
+}
+
+option, select {
+    color: #41426F;
+    font-size: 14px;
+    background-color: #FFFFFF;
+    height: 37px;
+}
+
+#message-title {
+    margin-top: 21px;
+}
+
+#message {
+    height: 68px;
+    vertical-align: text-top;
+}
+
+textarea {
+    resize: none;
+}
+
+#send {
+    width: 100px;
+    height: 24px;
+    margin-top: 9px;
+    margin-left: auto;
+    text-align: center;
+    font-size: 13px;
+    font-weight: bold;
+    background-color: #FFFFFF;
+    color: #41426F;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    order: 2;
+}
+
+#send:hover {
+    background-color: #41426F;
+    color: #FFFFFF;
+}
+
+#about-us {
+    border-top: 2px solid #41426F;
+    width: 100%;
+    padding: 38px 0px 38px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+#tablet-about-us-img, #desktop-about-us-img {
+    display: none;
+
+}
+
+.about-us-small {
+    display: flex;
+}
+
+#about-us h2 {
+    margin-bottom: 15px;
+    font-size: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #41426F;
+}
+
+#about-us p {
+    font-size: 24px;
+    color: #41426F;
+    line-height: 1.2;
+}
+
+#mobile-about-us-img {
+    margin-right: 16px;
+}
+
+#products-company-support {
+    border-top: 2px solid #41426F;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#products-company-support h2 {
+    margin-top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #41426F;
+}
+
+#products-company-support ul {
+    list-style-image: url('../assets/arrow-icon.png');
+    margin-left: 21px;
+}
+
+#products-company-support li {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 4.0;
+    color: #41426F;
+}
+
+#products, #company, #support {
+    border-bottom: 2px solid #41426F;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    main {
+        padding-top: 143px;
+    }
+
+    #mobile-learn-more {
+        display: none;
+    }
+
+    #no-mobile-button {
+        display: initial;
+        align-self: flex-end;
+    }
+
+    #trackgenix {
+        flex-direction: row;
+        flex: 0 1 auto;
+    }
+
+    #trackgenix p {
+        margin-top: 10px;
+    }
+
+    #main-image {
+        display: none;
+    }
+
+    #tablet-main-image {
+        display: initial;
+        margin-top: 9px;
+    }
+
+    #why-use-trackgenix h3 {
+        text-decoration: underline 2px #41426F;
+    }
+
+    #form {
+        width: 597px;
+        height: 470px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 24px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .name-email {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .name-email span {
+        flex: 0 1 49%;
+    }
+
+    #message-title {
+        margin-top: 100px;
+    }
+
+    #message {
+        height: 102px;
+    }
+
+    #send {
+        width: 255px;
+        height: 50px;
+    }
+
+    #mobile-about-us-img {
+        display: none;
+    }
+
+    #tablet-about-us-img {
+        display: initial;
+        margin-right: 33px;
+        margin-bottom: 39px;
+    }
+
+    #products-company-support {
+        border-top: 2px solid #41426F;
+        padding-top: 68px;
+        flex-direction: initial;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    #products, #company, #support {
+        flex: 1 1 auto;
+        border-bottom: none;
+    }
+
+    #company {
+        border-left: 2px solid #41426F;
+        border-right: 2px solid #41426F;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    main {
+        width: 80%;
+        margin-left: 20%;
+    }
+
+    #tablet-main-image {
+        display: none;
+    }
+
+    #main-image {
+        display: initial;
+        max-width: 60%;
+    }
+
+    .why-use-list {
+        justify-content: space-evenly;
+    }
+
+    .why-use-list ul {
+        max-width: 45%;
+    }
+
+    .about-us-desktop {
+        display: flex;
+    }
+
+    #mobile-about-us-img, #tablet-about-us-img {
+        display: none;
+    }
+
+    #desktop-about-us-img {
+        display: initial;
+        max-width: 60%;
+        margin-left: 65px;
+    }
+    #second-paragraph {
+        margin-top: 20px;
+    }
+}

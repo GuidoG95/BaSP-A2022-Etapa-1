@@ -1,0 +1,111 @@
+.sidebar {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+
+    .sidebar {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        bottom: 0px;
+        height: calc(100% - 120px);
+        width: 20%;
+        padding-left: 16px;
+        padding-right: 16px;
+        background-color: #41426F;
+    }
+
+    .sidebar h2 {
+        margin-top: 22px;
+        width: 100px;
+        border-bottom: 3px solid #AACE9B;
+        font-size: 40px;
+        font-weight: bold;
+        color: #FFFFFF;
+    }
+
+    .search {
+        width: 100%;
+        margin-top: 25px;
+        background-color: #41426F;
+        border-radius: 5px;
+        border: 1px solid #FFFFFF;
+    }
+
+    .sidebar input {
+        width: 85%;
+        height: 38px;
+        background-color: rgba(0, 0, 0, 0.0);
+        color: #FFFFFF;
+        border: none;
+        display: inline;
+    }
+
+    .search-button {
+        width: 12%;
+        background-color: #41426F;
+        color: #FFFFFF;
+        border: none;
+        display: inline;
+    }
+
+    nav a {
+        width: 100%;
+        height: 50px;
+        margin-top: 25px;
+        padding: 10px 0;
+        background-color: #FFFFFF;
+        border-radius: 5px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        display: inline-block;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    nav a:hover {
+        background-color: #AACE9B;
+        color: #FFFFFF;
+    }
+
+    .sidebar h3 {
+        margin-top: 10%;
+        font-size: 15px;
+        font-weight: bold;
+        color: #FFFFFF;
+        border-bottom: 3px solid #AACE9B;
+        width: 81px;
+    }
+
+    .gigatech {
+        font-size: 15px;
+        font-weight: bold;
+        margin-top: 8%;
+        margin-bottom: 6%;
+        color: #FFFFFF;
+    }
+
+    .email {
+        margin-top: 27px;
+    }
+
+    .middle {
+        width: 100%;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        margin-right: 16px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top: 1px solid #AACE9B;
+        border-bottom: 1px solid #AACE9B;
+    }
+
+    .sidebar p {
+        font-size: 14px;
+        font-weight: bold;
+        margin-top: 2%;
+        margin-bottom: 2%;
+        color: #FFFFFF;
+    }
+}
