@@ -29,3 +29,7 @@ git clone https://github.com/GuidoG95/BaSP-A2022-Etapa-1
 - Week 4: remake the style of the html file, now using flexbox.
 
     To view this week's work [click here](https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html).
+
+- Week 5: make and solve 6 .js files corresponding to the 6 exercises given in the problematic.
+
+    To view this week's work [click here](https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html).
