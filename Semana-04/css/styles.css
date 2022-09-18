@@ -10,3 +10,8 @@ a {
     text-decoration-line: none;
     color: #41426F;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+}

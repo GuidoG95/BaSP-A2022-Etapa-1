@@ -107,10 +107,6 @@ main {
     color: #41426F;
 }
 
-article {
-    width: 353px;
-}
-
 #why-use-trackgenix {
     padding-top: 26px;
     padding-bottom: 52px;
@@ -324,6 +320,10 @@ textarea {
         margin-top: 9px;
     }
 
+    article {
+        width: 353px;
+    }
+
     #why-use-trackgenix h3 {
         text-decoration: underline 2px #41426F;
     }
@@ -372,7 +372,7 @@ textarea {
 
     #products-company-support {
         border-top: 2px solid #41426F;
-        padding-top: 68px;
+        padding-top: 20px;
         flex-direction: initial;
         flex-wrap: wrap;
         justify-content: space-between;
@@ -392,8 +392,9 @@ textarea {
 @media (min-width: 1024px) {
 
     main {
+        align-self: flex-end;;
         width: 80%;
-        margin-left: 20%;
+        /* margin-left: 20%; */
     }
 
     #tablet-main-image {

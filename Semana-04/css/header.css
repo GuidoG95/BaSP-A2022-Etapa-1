@@ -2,6 +2,7 @@ header {
     position: fixed;
     height: 120px;
     width: 100%;
+    padding: 0 26px;
     background-color: #41426F;
     display:  flex;
     justify-content: space-between;
@@ -9,14 +10,12 @@ header {
 }
 
 h1 {
-    margin-left: 25px;
     font-size: 40px;
     font-weight: bold;
     color: #FFFFFF;
 }
 
 .fa-bars {
-    margin-right: 25px;
     color: #FFFFFF;
     font-size: 40px;
 }

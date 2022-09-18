@@ -1,7 +1,7 @@
 footer {
-    bottom: 0px;
+    align-self: flex-end;
+    justify-self: flex-end;;
     height: 143px;
-    width: 100%;
     padding-top: 19px;
     padding-bottom: 68px;
     background-color: #41426F;
