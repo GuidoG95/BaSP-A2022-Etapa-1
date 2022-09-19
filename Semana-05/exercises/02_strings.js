@@ -44,8 +44,8 @@ console.log("e- The first space is in the position: " + text2eFirstSpace);
 
 var text2f = "checKBoXes hyPnoTIzeD";
 var text2fFirstSpace = text2f.indexOf(" ");
-var word1 = text2f.substring(0, text2fFirstSpace+1);
-var word2 = text2f.substring(text2fFirstSpace+1);
+var word1 = text2f.substring(0, text2fFirstSpace + 1);
+var word2 = text2f.substring(text2fFirstSpace + 1);
 var word1FirstLetter = word1.substring(0, 1);
 var word1Rest = word1.substring(1);
 var word2FirstLetter = word2.substring(0, 1);

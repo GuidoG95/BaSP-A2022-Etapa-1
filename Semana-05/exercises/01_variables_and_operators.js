@@ -21,6 +21,6 @@ console.log("b- " + fullText);
 //     resultado de la suma en una 3er variable (utilizar length).
 
 var text1c = "This is an example text";
-var text2c =  "This is another text";
+var text2c = "This is another text";
 var totalCharLength = text1c.length + text2c.length;
 console.log("c- The length of both of the strings is: " + totalCharLength);
