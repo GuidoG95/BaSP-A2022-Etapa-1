@@ -5,14 +5,12 @@
 @media (min-width: 1024px) {
 
     .sidebar {
-        align-self: flex-start;
-        justify-self: flex-start;
+        position: sticky;
+        top: 120px;
         display: flex;
         flex-direction: column;
         gap: 25px;
-        position: fixed;
-        /* bottom: 0px; */
-        height: calc(100% - 120px);
+        max-height: calc(100vh - 120px);
         width: 20%;
         padding-left: 16px;
         padding-right: 16px;
@@ -24,28 +22,27 @@
         text-decoration: underline 3px #AACE9B;
         text-underline-offset: 5px;
         font-weight: bold;
-        color: #FFFFFF;
+        color: white;
     }
 
     .search {
         display: flex;
-        justify-content: space-around;
         height: 38px;
         background-color: #41426F;
         border-radius: 5px;
-        border: 1px solid #FFFFFF;
+        border: 1px solid white;
     }
 
     .search-button {
         background-color: rgba(0, 0, 0, 0.0);
-        color: #FFFFFF;
+        color: white;
         border: none;
     }
 
     .sidebar input {
-        flex: 1 0 auto;
+        flex: 0 1 100%;
         background-color: rgba(0, 0, 0, 0.0);
-        color: #FFFFFF;
+        color: white;
         border: none;
         display: inline;
     }
@@ -53,15 +50,14 @@
     nav {
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-content: center;
+        text-align: center;
         gap: 8px;
     }
 
-
     nav a {
         height: 50px;
-        background-color: #FFFFFF;
+        padding-top: 17px;
+        background-color: white;
         border-radius: 5px;
         font-size: 15px;
         font-weight: bold;
@@ -70,13 +66,13 @@
 
     nav a:hover {
         background-color: #AACE9B;
-        color: #FFFFFF;
+        color: white;
     }
 
     .sidebar h3 {
         font-size: 15px;
         font-weight: bold;
-        color: #FFFFFF;
+        color: white;
         text-decoration: underline 3px #AACE9B;
         text-underline-offset: 5px;
     }
@@ -84,7 +80,7 @@
     .gigatech {
         font-size: 15px;
         font-weight: bold;
-        color: #FFFFFF;
+        color: white;
     }
 
     .contact {
@@ -102,6 +98,6 @@
     .sidebar p {
         font-size: 14px;
         font-weight: bold;
-        color: #FFFFFF;
+        color: white;
     }
 }

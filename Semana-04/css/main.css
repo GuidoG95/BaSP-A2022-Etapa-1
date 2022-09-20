@@ -1,8 +1,6 @@
 main {
-    width: 100%;
     padding-left: 31px;
     padding-right: 31px;
-    padding-top: 150px;
     display: flex;
     flex-direction: column;
 }
@@ -56,7 +54,7 @@ main {
     width: 147px;
     height: 47px;
     padding: 15px;
-    background-color: #FFFFFF;
+    background-color: white;
     border-radius: 5px;
     font-size: 15px;
     font-weight: bold;
@@ -71,7 +69,7 @@ main {
 
 #trackgenix a:hover {
     background-color: #AACE9B;
-    color: #FFFFFF;
+    color: white;
 }
 
 #what-we-do {
@@ -92,7 +90,7 @@ main {
 #what-we-do h3 {
     padding-left: 70px;
     font-size: 25px;
-    color: #000000;
+    color: black;
     font-weight: bold;
 }
 
@@ -181,7 +179,7 @@ main {
 option, select {
     color: #41426F;
     font-size: 14px;
-    background-color: #FFFFFF;
+    background-color: white;
     height: 37px;
 }
 
@@ -206,7 +204,7 @@ textarea {
     text-align: center;
     font-size: 13px;
     font-weight: bold;
-    background-color: #FFFFFF;
+    background-color: white;
     color: #41426F;
     border: none;
     border-radius: 5px;
@@ -216,7 +214,7 @@ textarea {
 
 #send:hover {
     background-color: #41426F;
-    color: #FFFFFF;
+    color: white;
 }
 
 #about-us {
@@ -289,8 +287,10 @@ textarea {
 }
 
 @media (min-width: 768px) {
+
     main {
-        padding-top: 143px;
+        /* max-height: calc(100vh - 120px); */
+        /* overflow-y: scroll; */
     }
 
     #mobile-learn-more {
@@ -392,9 +392,9 @@ textarea {
 @media (min-width: 1024px) {
 
     main {
-        align-self: flex-end;;
         width: 80%;
-        /* margin-left: 20%; */
+        height: 100%;
+        overflow: scroll;
     }
 
     #tablet-main-image {

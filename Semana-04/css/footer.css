@@ -1,11 +1,15 @@
+.footer {
+    width: 100%;
+}
+
 footer {
     align-self: flex-end;
-    justify-self: flex-end;;
+    justify-self: flex-end;
     height: 143px;
     padding-top: 19px;
     padding-bottom: 68px;
     background-color: #41426F;
-    color: #FFFFFF;
+    color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,21 +20,13 @@ footer {
     display: flex;
 }
 
-#fb {
-    margin-left: 0px;
-}
-
 #ig {
     margin-left: auto;
     margin-right: auto;
 }
 
-#tw {
-    margin-right: 0px;
-}
-
 .fa-facebook, .fa-instagram, .fa-twitter {
-    color: #FFFFFF;
+    color: white;
     font-size: 48px;
 }
 
@@ -41,8 +37,7 @@ footer p {
 
 @media (min-width: 1024px) {
 
-    footer {
+    .footer {
         width: 80%;
-        margin-left: 20%;
     }
 }

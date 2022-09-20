@@ -11,7 +11,9 @@ a {
     color: #41426F;
 }
 
-body {
+.main-container {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-top: 120px;
 }
