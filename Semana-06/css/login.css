@@ -92,6 +92,13 @@ main {
     border: 2px solid green;
 }
 
+main p {
+    align-self: flex-start;
+    color: red;
+    font-size: 12px;
+    font-weight: 300;
+}
+
 @media (min-width: 1024px) {
 
     main {
