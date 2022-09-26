@@ -24,9 +24,6 @@ main {
     background-color: white;
     border-radius: 30px;
     box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
-    font-size: 14px;
-    font-weight: 600;
-    color: #41426F;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -45,6 +42,10 @@ main {
     flex-wrap: wrap;
     justify-content: space-between;
     gap: 8px;
+}
+
+#date-of-birth {
+    padding-right: 8px;
 }
 
 .inputs input {
@@ -97,6 +98,13 @@ main {
 
 .green-border {
     border: 2px solid green;
+}
+
+main p {
+    align-self: flex-start;
+    color: red;
+    font-size: 12px;
+    font-weight: 300;
 }
 
 @media (min-width: 768px) {
