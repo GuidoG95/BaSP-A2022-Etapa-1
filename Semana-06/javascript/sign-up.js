@@ -1,37 +1,101 @@
-window.onload = function() {
+window.onload = function () {
 
     var buttonAlert = [];
 
     function validateLetters(a) {
-        for(i = 0; i < a.length; i++) {
-            if(!isNaN(a.charAt(i))) {
-                return("false");
-            } else {
-                return("true");
+        for (i = 0; i < a.length; i++) {
+            if (!isNaN(a.charAt(i))) {
+                i = a.length;
+                return ("false");
             }
         }
+        return ("true");
     }
+
     function validateNumbers(a) {
-        for(i = 0; i < a.length; i++) {
-            if(isNaN(a.charAt(i))) {
-                return("false");
-            } else {
-                return("true");
+        for (i = 0; i < a.length; i++) {
+            if (isNaN(a.charAt(i))) {
+                return ("false");
             }
+        }
+        return ("true");
+    }
+
+    var firstName = document.getElementById("first-name");
+    firstName.onblur = function () {
+        var firstNameLength = firstName.value.length;
+        if (firstNameLength >= 3) {
+            if (validateLetters(firstName.value) == "true") {
+                firstName.classList.add("green-border");
+            } else {
+                firstName.classList.add("red-border");
+            }
+        } else {
+            firstName.classList.add("red-border");
         }
     }
 
-    // firstName.onblur = function () {
-    //     var name = document.getElementById(name);
-    //     var nameLength = name.value.length;
-    //     if(nameLength >= 3) {
-    //         if(validateLetters(name.value) == "true") {
-    //             name.classList.add("green-border");
-    //         } else {
-    //             name.classList.add("red-border");
-    //         }
-    //     }
-    // }
+    firstName.onfocus = function () {
+        firstName.classList.remove("green-border", "red-border");
+    }
+
+    var lastName = document.getElementById("last-name");
+    var lastNameLength = lastName.value.length;
+    lastName.onblur = function () {
+        if (lastNameLength >= 3) {
+            if (validateLetters(lastName.value) == "true") {
+                lastName.classList.add("green-border");
+            }
+        } else {
+            lastName.classList.add("red-border");
+        }
+    }
+
+    lastName.onfocus = function () {
+        lastName.classList.remove("green-border", "red-border");
+    }
+
+    var documentNumber = document.getElementById("document-number");
+    documentNumber.onblur = function () {
+        if(documentNumber.value.length >= 7) {
+            if(documentNumber.value.indexOf(" ") < 0) {
+                if (validateNumbers(documentNumber.value) == "true") {
+                    documentNumber.classList.add("green-border");
+                } else {
+                    documentNumber.classList.add("red-border");
+                }
+            } else {
+                documentNumber.classList.add("red-border");
+            }
+        } else {
+            documentNumber.classList.add("red-border");
+        }
+    }
+
+    documentNumber.onfocus = function () {
+        documentNumber.classList.remove("green-border", "red-border");
+    }
+
+    var phoneNumber = document.getElementById("phone-number");
+    phoneNumber.onblur = function () {
+        if(phoneNumber.value.length == 10) {
+            if(phoneNumber.value.indexOf(" ") < 0) {
+                if (validateNumbers(phoneNumber.value) == "true") {
+                    phoneNumber.classList.add("green-border");
+                } else {
+                    phoneNumber.classList.add("red-border");
+                }
+            } else {
+                phoneNumber.classList.add("red-border");
+            }
+        } else {
+            phoneNumber.classList.add("red-border");
+        }
+    }
+
+    phoneNumber.onfocus = function () {
+        phoneNumber.classList.remove("green-border", "red-border");
+    }
 
     var emailAlert = document.createElement("p");
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
@@ -39,7 +103,7 @@ window.onload = function() {
     email.onblur = function () {
         var email = document.getElementById("email");
         var emailLength = email.value.length;
-        if(emailLength == 0) {
+        if (emailLength == 0) {
             email.classList.add("red-border");
             emailAlert.innerHTML = "Email is required.";
             email.insertAdjacentElement('afterend', emailAlert);
@@ -83,7 +147,7 @@ window.onload = function() {
                 } else if (!isNaN(password.value.charAt(i)) && charNumber == 0) {
                     charNumber++;
                 }
-                if(charLower != 0 && charNumber != 0 && charUpper != 0) {
+                if (charLower != 0 && charNumber != 0 && charUpper != 0) {
                     password.classList.add("green-border");
                     i = passwordLength;
                     passwordAlert.innerHTML = "";
@@ -99,12 +163,19 @@ window.onload = function() {
         }
     }
 
+    password.onfocus = function () {
+        password.classList.remove("green-border", "red-border");
+        charUpper = 0;
+        charLower = 0;
+        charNumber = 0;
+    }
+
     var confirmPasswordAlert = document.createElement("p");
 
+    var confirmPassword = document.getElementById("confirm-password");
     confirmPassword.onblur = function () {
-        var confirmPassword = document.getElementById("confirm-password");
         var password = document.getElementById("password");
-        if(confirmPassword.value == password.value) {
+        if (confirmPassword.value == password.value) {
             confirmPassword.classList.add("green-border");
             confirmPasswordAlert.innerHTML = "";
             confirmPassword.insertAdjacentElement('afterend', confirmPasswordAlert);
@@ -115,5 +186,9 @@ window.onload = function() {
             confirmPassword.insertAdjacentElement('afterend', confirmPasswordAlert);
             buttonAlert[10] = "Password: " + confirmPassword.value;
         }
+    }
+
+    confirmPassword.onfocus = function () {
+        confirmPassword.classList.remove("green-border", "red-border");
     }
 }

@@ -44,8 +44,8 @@ main {
     gap: 8px;
 }
 
-#date-of-birth {
-    padding-right: 8px;
+.inputs div {
+    width: 100%;
 }
 
 .inputs input {
@@ -53,6 +53,10 @@ main {
     height: 42px;
     padding-left: 10px;
     background-color: rgba(0, 0, 0, 0.04);
+}
+
+#date-of-birth {
+    padding-right: 8px;
 }
 
 #buttons {
@@ -113,7 +117,7 @@ main p {
         width: 620px;
     }
 
-    .inputs input {
+    .inputs div {
         width: 49%;
     }
 }

@@ -40,6 +40,10 @@ main {
     color: #41426F;
 }
 
+form div {
+    width: 100%;
+}
+
 .data-box input {
     width: 100%;
     height: 42px;
