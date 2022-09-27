@@ -51,6 +51,15 @@ form div {
     background-color: rgba(0, 0, 0, 0.04);
 }
 
+.data-box label {
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 16px;
+    color: #41426F;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
 #buttons {
     width: 100%;
     display: flex;

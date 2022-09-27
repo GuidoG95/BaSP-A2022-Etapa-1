@@ -1,6 +1,8 @@
 window.onload = function () {
 
     var buttonAlert = [];
+    buttonAlert[0] = "Invalid email: Email is required";
+    buttonAlert[1] = "Invalid password: Password is required";
     var emailAlert = document.createElement("p");
     var passwordAlert = document.createElement("p");
     var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
@@ -8,7 +10,7 @@ window.onload = function () {
     email.onblur = function () {
         var email = document.getElementById("email");
         var emailLength = email.value.length;
-        if(emailLength == 0) {
+        if (emailLength == 0) {
             email.classList.add("red-border");
             emailAlert.innerHTML = "Email is required.";
             email.insertAdjacentElement('afterend', emailAlert);
@@ -28,7 +30,6 @@ window.onload = function () {
 
     email.onfocus = function () {
         email.classList.remove("green-border", "red-border");
-        buttonAlert.splice(0);
     }
 
     var charUpper = 0;
@@ -38,7 +39,12 @@ window.onload = function () {
     password.onblur = function () {
         var password = document.getElementById("password");
         var passwordLength = password.value.length;
-        if (passwordLength < 8) {
+        if (passwordLength == 0) {
+            password.classList.add("red-border");
+            passwordAlert.innerHTML = "Password is required.";
+            password.insertAdjacentElement('afterend', passwordAlert);
+            buttonAlert[1] = "Invalid password: " + passwordAlert.innerHTML;
+        } else if (passwordLength < 8) {
             password.classList.add("red-border");
             passwordAlert.innerHTML = "Password must have at least 8 characters.";
             password.insertAdjacentElement('afterend', passwordAlert);
@@ -52,7 +58,7 @@ window.onload = function () {
                 } else if (!isNaN(password.value.charAt(i)) && charNumber == 0) {
                     charNumber++;
                 }
-                if(charLower != 0 && charNumber != 0 && charUpper != 0) {
+                if (charLower != 0 && charNumber != 0 && charUpper != 0) {
                     password.classList.add("green-border");
                     i = passwordLength;
                     passwordAlert.innerHTML = "";
@@ -76,7 +82,13 @@ window.onload = function () {
     }
 
     var logInButton = document.getElementById("log-in-button");
-    logInButton.onclick = function() {
-        alert(buttonAlert[0] + "\n" + buttonAlert[1]);
+
+    logInButton.onclick = function () {
+        var buttonAlertString = [];
+        for (i = 0; i < buttonAlert.length; i++) {
+            buttonAlertString.push(buttonAlert[i]);
+        }
+        buttonAlertString = buttonAlertString.join("\n");
+        alert(buttonAlertString);
     }
 }

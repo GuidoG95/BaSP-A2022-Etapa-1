@@ -33,3 +33,7 @@ git clone https://github.com/GuidoG95/BaSP-A2022-Etapa-1
 - Week 5: make and solve 6 .js files corresponding to the 6 exercises given in the problematic.
 
     To view this week's work [click here](https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-05/index.html).
+
+- Week 6: add validation to index, login and sign up pages using js
+
+    To view this week's work [click here](https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html).
