@@ -1,37 +1,53 @@
 window.onload = function () {
 
     var buttonAlert = [];
+    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
     function validateLetters(a) {
         for (i = 0; i < a.length; i++) {
-            if (!isNaN(a.charAt(i))) {
-                i = a.length;
-                return ("false");
+            if (chars.indexOf(a.charAt(i)) == -1) {
+                return false;
             }
         }
-        return ("true");
+        return true;
     }
 
     function validateNumbers(a) {
         for (i = 0; i < a.length; i++) {
             if (isNaN(a.charAt(i))) {
-                return ("false");
+                return false;
             }
         }
-        return ("true");
+        return true;
     }
 
     var firstName = document.getElementById("first-name");
+    var firstNameAlert = document.createElement("p");
+
     firstName.onblur = function () {
         var firstNameLength = firstName.value.length;
-        if (firstNameLength >= 3) {
-            if (validateLetters(firstName.value) == "true") {
+        if (firstNameLength == 0) {
+            firstName.classList.add("red-border");
+            firstNameAlert.innerHTML = "Name is required.";
+            firstName.insertAdjacentElement('afterend', firstNameAlert);
+            buttonAlert[0] = "Invalid name: " + firstNameAlert;
+        } else if (firstNameLength >= 3) {
+            if (validateLetters(firstName.value) == true) {
                 firstName.classList.add("green-border");
+                firstNameAlert.innerHTML = "";
+                firstName.insertAdjacentElement('afterend', firstNameAlert);
+                buttonAlert[0] = "Name: " + firstName;
             } else {
                 firstName.classList.add("red-border");
+                firstNameAlert.innerHTML = "Name must have only letters.";
+                firstName.insertAdjacentElement('afterend', firstNameAlert);
+                buttonAlert[0] = "Invalid name: " + firstNameAlert;
             }
         } else {
             firstName.classList.add("red-border");
+            firstNameAlert.innerHTML = "Name must have 3 or more characters.";
+            firstName.insertAdjacentElement('afterend', firstNameAlert);
+            buttonAlert[0] = "Invalid name: " + firstNameAlert;
         }
     }
 
@@ -40,14 +56,32 @@ window.onload = function () {
     }
 
     var lastName = document.getElementById("last-name");
-    var lastNameLength = lastName.value.length;
+    var lastNameAlert = document.createElement("p");
+
     lastName.onblur = function () {
-        if (lastNameLength >= 3) {
-            if (validateLetters(lastName.value) == "true") {
+        var lastNameLength = lastName.value.length;
+        if (lastNameLength == 0) {
+            lastName.classList.add("red-border");
+            lastNameAlert.innerHTML = "Last name is required.";
+            lastName.insertAdjacentElement('afterend', lastNameAlert);
+            buttonAlert[1] = "Invalid last name: " + lastNameAlert;
+        } else if (lastNameLength >= 3) {
+            if (validateLetters(lastName.value) == true) {
                 lastName.classList.add("green-border");
+                lastNameAlert.innerHTML = "";
+                lastName.insertAdjacentElement('afterend', lastNameAlert);
+                buttonAlert[1] = "Last name: " + lastName;
+            } else {
+                lastName.classList.add("red-border");
+                lastNameAlert.innerHTML = "Last name must have only letters.";
+                lastName.insertAdjacentElement('afterend', lastNameAlert);
+                buttonAlert[1] = "Invalid last name: " + lastNameAlert;
             }
         } else {
             lastName.classList.add("red-border");
+            lastNameAlert.innerHTML = "Last name must have 3 or more characters.";
+            lastName.insertAdjacentElement('afterend', lastNameAlert);
+            buttonAlert[1] = "Invalid last name: " + lastNameAlert;
         }
     }
 
@@ -56,19 +90,38 @@ window.onload = function () {
     }
 
     var documentNumber = document.getElementById("document-number");
+    var documentAlert = document.createElement("p");
+
     documentNumber.onblur = function () {
-        if(documentNumber.value.length >= 7) {
-            if(documentNumber.value.indexOf(" ") < 0) {
-                if (validateNumbers(documentNumber.value) == "true") {
+        if (documentNumber.value.length >= 7) {
+            if (documentNumber.value.indexOf(" ") < 0) {
+                if (validateNumbers(documentNumber.value) == true) {
                     documentNumber.classList.add("green-border");
+                    documentAlert.innerHTML = "";
+                    documentNumber.insertAdjacentElement('afterend', documentAlert);
+                    buttonAlert[2] = "Document: " + documentNumber;
                 } else {
                     documentNumber.classList.add("red-border");
+                    documentAlert.innerHTML = "Document must be only numbers.";
+                    documentNumber.insertAdjacentElement('afterend', documentAlert);
+                    buttonAlert[2] = "Invalid document: " + documentAlert;
                 }
             } else {
                 documentNumber.classList.add("red-border");
+                documentAlert.innerHTML = "Document can't have spaces between numbers.";
+                documentNumber.insertAdjacentElement('afterend', documentAlert);
+                buttonAlert[2] = "Invalid document: " + documentAlert;
             }
+        } else if (documentNumber.value.length > 0) {
+            documentNumber.classList.add("red-border");
+            documentAlert.innerHTML = "Document must be at least 7 digits long.";
+            documentNumber.insertAdjacentElement('afterend', documentAlert);
+            buttonAlert[2] = "Invalid document: " + documentAlert;
         } else {
             documentNumber.classList.add("red-border");
+            documentAlert.innerHTML = "Document is required.";
+            documentNumber.insertAdjacentElement('afterend', documentAlert);
+            buttonAlert[2] = "Invalid document: " + documentAlert;
         }
     }
 
@@ -77,24 +130,136 @@ window.onload = function () {
     }
 
     var phoneNumber = document.getElementById("phone-number");
+    var phoneAlert = document.createElement("p");
+
     phoneNumber.onblur = function () {
-        if(phoneNumber.value.length == 10) {
-            if(phoneNumber.value.indexOf(" ") < 0) {
-                if (validateNumbers(phoneNumber.value) == "true") {
+        if (phoneNumber.value.length == 10) {
+            if (phoneNumber.value.indexOf(" ") < 0) {
+                if (validateNumbers(phoneNumber.value) == true) {
                     phoneNumber.classList.add("green-border");
+                    phoneAlert.innerHTML = "";
+                    phoneNumber.insertAdjacentElement('afterend', phoneAlert);
+                    buttonAlert[4] = "Phone: " + phoneAlert;
                 } else {
                     phoneNumber.classList.add("red-border");
+                    phoneAlert.innerHTML = "Phone must have only numbers.";
+                    phoneNumber.insertAdjacentElement('afterend', phoneAlert);
+                    buttonAlert[4] = "Invalid phone: " + phoneAlert;
                 }
             } else {
                 phoneNumber.classList.add("red-border");
+                phoneAlert.innerHTML = "Phone can't have spaces between numbers.";
+                phoneNumber.insertAdjacentElement('afterend', phoneAlert);
+                buttonAlert[4] = "Invalid phone: " + phoneAlert;
             }
+        } else if (phoneNumber.value.length > 0) {
+            phoneNumber.classList.add("red-border");
+            phoneAlert.innerHTML = "Phone must be 10 digits long.";
+            phoneNumber.insertAdjacentElement('afterend', phoneAlert);
+            buttonAlert[4] = "Invalid phone: " + phoneAlert;
         } else {
             phoneNumber.classList.add("red-border");
+            phoneAlert.innerHTML = "Phone is required.";
+            phoneNumber.insertAdjacentElement('afterend', phoneAlert);
+            buttonAlert[4] = "Invalid phone: " + phoneAlert;
         }
     }
 
     phoneNumber.onfocus = function () {
         phoneNumber.classList.remove("green-border", "red-border");
+    }
+
+    var adress = document.getElementById("adress");
+    var adressAlert = document.createElement("p");
+
+    adress.onblur = function () {
+        for (i = 0; i < adress.value.length; i++) {
+            if (adress.value.charAt(i) == " ") {
+                var spaces = spaces + 1;
+            }
+            if (spaces == 1) {
+                var spacePos = adress.value.indexOf(" ");
+                var adressLetters = adress.value.substring(0, spacePos);
+                var adressNumbers = adress.value.substring(spacePos + 1);
+                if (validateLetters(adressLetters) == true && validateNumbers(adressNumbers) == true) {
+                    adress.classList.add("green-border");
+                    adressAlert.innerHTML = "";
+                    adress.insertAdjacentElement('afterend', adressAlert);
+                    buttonAlert[5] = "Adress: " + adressAlert;
+                }
+            } else {
+                adress.classList.add("red-border");
+                adressAlert.innerHTML = "Adress must have one space.";
+                adress.insertAdjacentElement('afterend', adressAlert);
+                buttonAlert[5] = "Invalid adress: " + adressAlert;
+            }
+        }
+    }
+
+    var city = document.getElementById("city");
+    var cityAlert = document.createElement("p");
+
+    city.onblur = function () {
+        if (city.value.length == 0) {
+            city.classList.add("red-border");
+            cityAlert.innerHTML = "City is required.";
+            city.insertAdjacentElement('afterend', cityAlert);
+            city[6] = "City: " + cityAlert;
+        } else if (city.value.length >= 3) {
+            city.classList.add("green-border");
+            cityAlert.innerHTML = "";
+            city.insertAdjacentElement('afterend', city);
+            city[6] = "City: " + cityAlert;
+        } else {
+            city.classList.add("red-border");
+            cityAlert.innerHTML = "City must be at least 3 characters long.";
+            city.insertAdjacentElement('afterend', cityAlert);
+            city[6] = "City: " + cityAlert;
+        }
+    }
+
+    city.onfocus = function () {
+        city.classList.remove("green-border", "red-border");
+    }
+
+    var postalCode = document.getElementById("postal-code");
+    var postalCodeAlert = document.createElement("p");
+
+    postalCode.onblur = function () {
+        if (postalCode.value.length >= 4 && postalCode.value.length <= 5) {
+            if (postalCode.value.indexOf(" ") < 0) {
+                if (validateNumbers(postalCode.value) == true) {
+                    postalCode.classList.add("green-border");
+                    postalCodeAlert.innerHTML = "";
+                    postalCode.insertAdjacentElement('afterend', postalCodeAlert);
+                    buttonAlert[7] = "Postal code: " + postalCodeAlert;
+                } else {
+                    postalCode.classList.add("red-border");
+                    postalCodeAlert.innerHTML = "Postal code must have only numbers.";
+                    postalCode.insertAdjacentElement('afterend', postalCodeAlert);
+                    buttonAlert[7] = "Invalid Postal code: " + postalCodeAlert;
+                }
+            } else {
+                postalCode.classList.add("red-border");
+                postalCodeAlert.innerHTML = "Postal code can't have spaces between numbers.";
+                postalCode.insertAdjacentElement('afterend', postalCodeAlert);
+                buttonAlert[7] = "Invalid Postal code: " + postalCodeAlert;
+            }
+        } else if (postalCode.value.length > 0) {
+            postalCode.classList.add("red-border");
+            postalCodeAlert.innerHTML = "Postal code must be 4 or 5 digits long.";
+            postalCode.insertAdjacentElement('afterend', postalCodeAlert);
+            buttonAlert[7] = "Invalid Postal code: " + postalCodeAlert;
+        } else {
+            postalCode.classList.add("red-border");
+            postalCodeAlert.innerHTML = "Postal code is required.";
+            postalCode.insertAdjacentElement('afterend', postalCodeAlert);
+            buttonAlert[7] = "Invalid Postal code: " + postalCodeAlert;
+        }
+    }
+
+    postalCode.onfocus = function () {
+        postalCode.classList.remove("green-border", "red-border");
     }
 
     var emailAlert = document.createElement("p");
