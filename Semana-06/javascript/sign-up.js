@@ -17,7 +17,18 @@ window.onload = function () {
 
     function validateLetters(a) {
         for (i = 0; i < a.length; i++) {
-            if (chars.indexOf(a.charAt(i)) == -1) {
+            if (chars.indexOf(a.charAt(i)) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    var charsPass = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    function validateSpecials(a) {
+        for (i = 0; i < a.length; i++) {
+            if (charsPass.indexOf(a.charAt(i)) < 0) {
                 return false;
             }
         }
@@ -352,6 +363,11 @@ window.onload = function () {
             passwordAlert.innerHTML = "Password must have at least 8 characters.";
             password.insertAdjacentElement('afterend', passwordAlert);
             buttonAlert[9] = "Invalid password: " + passwordAlert.innerHTML;
+        } else if (!validateSpecials(password.value)) {
+            password.classList.add("red-border");
+            passwordAlert.innerHTML = "Password can't contain special characters.";
+            password.insertAdjacentElement('afterend', passwordAlert);
+            buttonAlert[9] = "Invalid password: " + passwordAlert.innerHTML;
         } else {
             for (i = 0; i < passwordLength; i++) {
                 if (password.value.charAt(i) == password.value.charAt(i).toUpperCase() && isNaN(password.value.charAt(i)) && charUpper == 0) {
@@ -375,9 +391,13 @@ window.onload = function () {
                 }
             }
         }
-        if (confirmPassword.value != password.value) {
+        if (confirmPassword.value != password.value && passwordLength != 0) {
             confirmPassword.classList.add("red-border");
             confirmPasswordAlert.innerHTML = "Passwords don't match.";
+            confirmPassword.insertAdjacentElement('afterend', confirmPasswordAlert);
+            buttonAlert[10] = "Confirm password: " + confirmPasswordAlert.innerHTML;
+        } else {
+            confirmPasswordAlert.innerHTML = "";
             confirmPassword.insertAdjacentElement('afterend', confirmPasswordAlert);
             buttonAlert[10] = "Confirm password: " + confirmPasswordAlert.innerHTML;
         }
@@ -396,7 +416,12 @@ window.onload = function () {
 
     confirmPassword.onblur = function () {
         var password = document.getElementById("password");
-        if (confirmPassword.value == password.value) {
+        if (confirmPassword.value.length == 0) {
+            confirmPassword.classList.add("red-border");
+            confirmPasswordAlert.innerHTML = "Password is required.";
+            confirmPassword.insertAdjacentElement('afterend', confirmPasswordAlert);
+            buttonAlert[10] = "Confirm password: " + confirmPasswordAlert.innerHTML;
+        } else if (confirmPassword.value == password.value) {
             confirmPassword.classList.add("green-border");
             confirmPasswordAlert.innerHTML = "";
             confirmPassword.insertAdjacentElement('afterend', confirmPasswordAlert);
