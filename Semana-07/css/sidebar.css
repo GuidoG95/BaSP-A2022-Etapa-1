@@ -1,0 +1,103 @@
+.sidebar {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+
+    .sidebar {
+        position: sticky;
+        top: 120px;
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        height: calc(100vh - 120px);
+        width: 20%;
+        padding-left: 16px;
+        padding-right: 16px;
+        background-color: #41426F;
+    }
+
+    .sidebar h2 {
+        font-size: 40px;
+        text-decoration: underline 3px #AACE9B;
+        text-underline-offset: 5px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .search {
+        display: flex;
+        height: 38px;
+        background-color: #41426F;
+        border-radius: 5px;
+        border: 1px solid white;
+    }
+
+    .search-button {
+        background-color: rgba(0, 0, 0, 0.0);
+        color: white;
+        border: none;
+    }
+
+    .sidebar input {
+        flex: 0 1 100%;
+        background-color: rgba(0, 0, 0, 0.0);
+        color: white;
+        border: none;
+        display: inline;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+
+    nav a {
+        height: 50px;
+        padding-top: 17px;
+        background-color: white;
+        border-radius: 5px;
+        font-size: 15px;
+        font-weight: bold;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    }
+
+    nav a:hover {
+        background-color: #AACE9B;
+        color: white;
+    }
+
+    .sidebar h3 {
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+        text-decoration: underline 3px #AACE9B;
+        text-underline-offset: 5px;
+    }
+
+    .gigatech {
+        font-size: 15px;
+        font-weight: bold;
+        color: white;
+    }
+
+    .contact {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .middle {
+        padding: 10px 0;
+        border-top: 1px solid #AACE9B;
+        border-bottom: 1px solid #AACE9B;
+    }
+
+    .sidebar p {
+        font-size: 14px;
+        font-weight: bold;
+        color: white;
+    }
+}

@@ -1,0 +1,44 @@
+.footer {
+    width: 100%;
+    align-self: flex-end;
+}
+
+footer {
+    align-self: flex-end;
+    justify-self: flex-end;
+    height: 143px;
+    padding-top: 19px;
+    padding-bottom: 68px;
+    background-color: #41426F;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#social-media {
+    width: 318px;
+    display: flex;
+}
+
+#ig {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.fa-facebook, .fa-instagram, .fa-twitter {
+    color: white;
+    font-size: 48px;
+}
+
+footer p {
+    padding-top: 42px;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+
+    .footer {
+        width: 80%;
+    }
+}

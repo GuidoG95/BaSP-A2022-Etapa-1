@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+h1, h2, h3, h4, a, p, form, option, textarea, li, input {
+    font-family: 'Roboto';
+}
+
+a {
+    text-decoration-line: none;
+    color: #41426F;
+}
+
+.main-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    padding-top: 120px;
+}

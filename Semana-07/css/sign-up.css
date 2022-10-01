@@ -1,0 +1,139 @@
+main {
+    width: 100%;
+    min-height: calc(100vh - 263px);
+    padding: 54px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rr-logo {
+    max-width: 224px;
+}
+
+#log-in {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 35px;
+}
+
+.data-box {
+    width: 350px;
+    padding: 24px 16px;
+    background-color: white;
+    border-radius: 30px;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+.data-box h2 {
+    padding-top: 5px;
+    font-size: 24px;
+    font-weight: bolder;
+    color: #41426F;
+}
+
+.inputs {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.inputs div {
+    width: 100%;
+}
+
+.inputs label {
+    font-family: 'Roboto';
+    font-size: 14px;
+    line-height: 16px;
+    color: #41426F;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+.inputs input {
+    width: 100%;
+    height: 42px;
+    padding-left: 10px;
+    background-color: rgba(0, 0, 0, 0.04);
+}
+
+#date-of-birth {
+    padding-right: 8px;
+}
+
+#buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    width: 150px;
+    height: 64px;
+    padding: 24.5px;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#back-button {
+    background-color: #49A37B;
+}
+
+#sign-up-button {
+    background-color: #41426F;
+}
+
+#sign-up-button:hover {
+    background-color: white;
+    color: #41426F;
+}
+
+.normal-border {
+    border: none;
+    border-radius: 21px;
+}
+
+.red-border {
+    border: 2px solid red;
+}
+
+.green-border {
+    border: 2px solid green;
+}
+
+main p {
+    align-self: flex-start;
+    color: red;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+@media (min-width: 768px) {
+
+    .data-box {
+        width: 620px;
+    }
+
+    .inputs div {
+        width: 49%;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    main {
+        width: 80%;
+    }
+}
