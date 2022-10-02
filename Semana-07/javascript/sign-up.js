@@ -6,14 +6,18 @@ window.onload = function () {
     buttonAlert[2] = "Invalid last document: Document is required";
     buttonAlert[3] = "Invalid date: Date of birth is required";
     buttonAlert[4] = "Invalid phone: Phone number is required";
-    buttonAlert[5] = "Invalid adress: Adress is required";
+    buttonAlert[5] = "Invalid address: address is required";
     buttonAlert[6] = "Invalid city: City is required";
     buttonAlert[7] = "Invalid postal code: Postal code is required";
     buttonAlert[8] = "Invalid email: Email is required";
     buttonAlert[9] = "Invalid password: Password is required";
     buttonAlert[10] = "Invalid confirm password: Confirm password is required";
+    var alertQuerys = [];
+    var paramLink = "https://basp-m2022-api-rest-server.herokuapp.com/signup?";
+    var paramQuerys = [];
+    var alert = document.createElement ("p");
 
-    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 
     function validateLetters(a) {
         for (i = 0; i < a.length; i++) {
@@ -49,7 +53,7 @@ window.onload = function () {
 
     firstName.onblur = function () {
         var firstNameLength = firstName.value.length;
-        if (firstNameLength == 0) {
+        if (!firstNameLength) {
             firstName.classList.add("red-border");
             firstNameAlert.innerHTML = "Name is required.";
             firstName.insertAdjacentElement('afterend', firstNameAlert);
@@ -72,6 +76,7 @@ window.onload = function () {
             firstName.insertAdjacentElement('afterend', firstNameAlert);
             buttonAlert[0] = "Invalid name: " + firstNameAlert.innerHTML;
         }
+        paramQuerys[0] = "name=" + firstName.value;
     }
 
     firstName.onfocus = function () {
@@ -83,7 +88,7 @@ window.onload = function () {
 
     lastName.onblur = function () {
         var lastNameLength = lastName.value.length;
-        if (lastNameLength == 0) {
+        if (!lastNameLength) {
             lastName.classList.add("red-border");
             lastNameAlert.innerHTML = "Last name is required.";
             lastName.insertAdjacentElement('afterend', lastNameAlert);
@@ -106,6 +111,7 @@ window.onload = function () {
             lastName.insertAdjacentElement('afterend', lastNameAlert);
             buttonAlert[1] = "Invalid last name: " + lastNameAlert.innerHTML;
         }
+        paramQuerys[1] = "lastName=" + lastName.value;
     }
 
     lastName.onfocus = function () {
@@ -146,6 +152,7 @@ window.onload = function () {
             documentNumber.insertAdjacentElement('afterend', documentAlert);
             buttonAlert[2] = "Invalid document: " + documentAlert.innerHTML;
         }
+        paramQuerys[2] = "dni=" + documentNumber.value;
     }
 
     documentNumber.onfocus = function () {
@@ -162,11 +169,13 @@ window.onload = function () {
             dateOfBirth.insertAdjacentElement('afterend', dateAlert);
             buttonAlert[3] = "Invalid date: " + dateAlert.innerHTML;
         } else {
+            var dateOfBirthFormated = dateOfBirth.value.substring(5, 7) + "/" + dateOfBirth.value.substring(8) + "/" + dateOfBirth.value.substring(0, 4);
             dateOfBirth.classList.add("green-border");
             dateAlert.innerHTML = "";
             dateOfBirth.insertAdjacentElement('afterend', dateAlert);
-            buttonAlert[3] = "Date of birth: " + dateOfBirth.value;
+            buttonAlert[3] = "Date of birth: " + dateOfBirthFormated;
         }
+        paramQuerys[3] = "dob=" + dateOfBirthFormated;
     }
 
     dateOfBirth.onfocus = function () {
@@ -207,56 +216,58 @@ window.onload = function () {
             phoneNumber.insertAdjacentElement('afterend', phoneAlert);
             buttonAlert[4] = "Invalid phone: " + phoneAlert.innerHTML;
         }
+        paramQuerys[4] = "phone=" + phoneNumber.value;
     }
 
     phoneNumber.onfocus = function () {
         phoneNumber.classList.remove("green-border", "red-border");
     }
 
-    var adress = document.getElementById("adress");
-    var adressAlert = document.createElement("p");
+    var address = document.getElementById("address");
+    var addressAlert = document.createElement("p");
     var spacePos = 0;
 
-    adress.onblur = function () {
-        if (adress.value.length == 0) {
-            adress.classList.add("red-border");
-            adressAlert.innerHTML = "Adress is required.";
-            adress.insertAdjacentElement('afterend', adressAlert);
-            buttonAlert[5] = "Invalid adress: " + adressAlert.innerHTML;
-        } else if (adress.value.length < 5) {
-            adress.classList.add("red-border");
-            adressAlert.innerHTML = "Adress must have at least 5 characters.";
-            adress.insertAdjacentElement('afterend', adressAlert);
-            buttonAlert[5] = "Invalid adress: " + adressAlert.innerHTML;
+    address.onblur = function () {
+        if (!address.value.length) {
+            address.classList.add("red-border");
+            addressAlert.innerHTML = "address is required.";
+            address.insertAdjacentElement('afterend', addressAlert);
+            buttonAlert[5] = "Invalid address: " + addressAlert.innerHTML;
+        } else if (address.value.length < 5) {
+            address.classList.add("red-border");
+            addressAlert.innerHTML = "address must have at least 5 characters.";
+            address.insertAdjacentElement('afterend', addressAlert);
+            buttonAlert[5] = "Invalid address: " + addressAlert.innerHTML;
         } else {
-            for (i = 0; i < adress.value.length; i++) {
-                if (adress.value.charAt(i) == " ") {
-                    spacePos = adress.value.indexOf(" ");
+            for (i = 0; i < address.value.length; i++) {
+                if (address.value.charAt(i) == " ") {
+                    spacePos = address.value.indexOf(" ");
                 }
-                if (spacePos > 0 && spacePos < adress.value.length - 1) {
-                    adress.classList.add("green-border");
-                    adressAlert.innerHTML = "";
-                    adress.insertAdjacentElement('afterend', adressAlert);
-                    buttonAlert[5] = "Adress: " + adress.value;
+                if (spacePos > 0 && spacePos < address.value.length - 1) {
+                    address.classList.add("green-border");
+                    addressAlert.innerHTML = "";
+                    address.insertAdjacentElement('afterend', addressAlert);
+                    buttonAlert[5] = "address: " + address.value;
                 } else {
-                    adress.classList.add("red-border");
-                    adressAlert.innerHTML = "Adress must have at least one space in the middle.";
-                    adress.insertAdjacentElement('afterend', adressAlert);
-                    buttonAlert[5] = "Invalid adress: " + adressAlert.innerHTML;
+                    address.classList.add("red-border");
+                    addressAlert.innerHTML = "address must have letters, numbers and at least one space in the middle.";
+                    address.insertAdjacentElement('afterend', addressAlert);
+                    buttonAlert[5] = "Invalid address: " + addressAlert.innerHTML;
                 }
             }
         }
+        paramQuerys[5] = "address=" + address.value;
     }
 
-    adress.onfocus = function () {
-        adress.classList.remove("green-border", "red-border");
+    address.onfocus = function () {
+        address.classList.remove("green-border", "red-border");
     }
 
     var city = document.getElementById("city");
     var cityAlert = document.createElement("p");
 
     city.onblur = function () {
-        if (city.value.length == 0) {
+        if (!city.value.length) {
             city.classList.add("red-border");
             cityAlert.innerHTML = "City is required.";
             city.insertAdjacentElement('afterend', cityAlert);
@@ -272,6 +283,7 @@ window.onload = function () {
             city.insertAdjacentElement('afterend', cityAlert);
             city[6] = "City: " + cityAlert.innerHTML;
         }
+        paramQuerys[6] = "city=" + city.value;
     }
 
     city.onfocus = function () {
@@ -312,6 +324,7 @@ window.onload = function () {
             postalCode.insertAdjacentElement('afterend', postalCodeAlert);
             buttonAlert[7] = "Invalid Postal code: " + postalCodeAlert.innerHTML;
         }
+        paramQuerys[7] = "zip=" + postalCode.value;
     }
 
     postalCode.onfocus = function () {
@@ -324,7 +337,7 @@ window.onload = function () {
     email.onblur = function () {
         var email = document.getElementById("email");
         var emailLength = email.value.length;
-        if (emailLength == 0) {
+        if (!emailLength) {
             email.classList.add("red-border");
             emailAlert.innerHTML = "Email is required.";
             email.insertAdjacentElement('afterend', emailAlert);
@@ -340,6 +353,7 @@ window.onload = function () {
             email.insertAdjacentElement('afterend', emailAlert);
             buttonAlert[8] = "Invalid email: " + emailAlert.innerHTML;
         }
+        paramQuerys[8] = "email=" + email.value;
     }
 
     email.onfocus = function () {
@@ -353,7 +367,7 @@ window.onload = function () {
     password.onblur = function () {
         var password = document.getElementById("password");
         var passwordLength = password.value.length;
-        if (passwordLength == 0) {
+        if (!passwordLength) {
             password.classList.add("red-border");
             passwordAlert.innerHTML = "Password is required.";
             password.insertAdjacentElement('afterend', passwordAlert);
@@ -370,11 +384,11 @@ window.onload = function () {
             buttonAlert[9] = "Invalid password: " + passwordAlert.innerHTML;
         } else {
             for (i = 0; i < passwordLength; i++) {
-                if (password.value.charAt(i) == password.value.charAt(i).toUpperCase() && isNaN(password.value.charAt(i)) && charUpper == 0) {
+                if (password.value.charAt(i) == password.value.charAt(i).toUpperCase() && isNaN(password.value.charAt(i)) && !charUpper) {
                     charUpper++;
-                } else if (password.value.charAt(i) == password.value.charAt(i).toLowerCase() && isNaN(password.value.charAt(i)) && charLower == 0) {
+                } else if (password.value.charAt(i) == password.value.charAt(i).toLowerCase() && isNaN(password.value.charAt(i)) && !charLower) {
                     charLower++;
-                } else if (!isNaN(password.value.charAt(i)) && charNumber == 0) {
+                } else if (!isNaN(password.value.charAt(i)) && !charNumber) {
                     charNumber++;
                 }
                 if (charLower != 0 && charNumber != 0 && charUpper != 0) {
@@ -401,6 +415,7 @@ window.onload = function () {
             confirmPassword.insertAdjacentElement('afterend', confirmPasswordAlert);
             buttonAlert[10] = "Confirm password: " + confirmPasswordAlert.innerHTML;
         }
+        paramQuerys[9] = "password=" + password.value;
     }
 
     password.onfocus = function () {
@@ -416,7 +431,7 @@ window.onload = function () {
 
     confirmPassword.onblur = function () {
         var password = document.getElementById("password");
-        if (confirmPassword.value.length == 0) {
+        if (!confirmPassword.value.length) {
             confirmPassword.classList.add("red-border");
             confirmPasswordAlert.innerHTML = "Password is required.";
             confirmPassword.insertAdjacentElement('afterend', confirmPasswordAlert);
@@ -440,6 +455,11 @@ window.onload = function () {
 
     var signUpButton = document.getElementById("sign-up-button");
 
+    function concatUrl(a, b) {
+        var c = b.join("&");
+        return a + c;
+    }
+
     signUpButton.onclick = function () {
         var buttonAlertString = [];
         for (i = 0; i < buttonAlert.length; i++) {
@@ -447,5 +467,19 @@ window.onload = function () {
         }
         buttonAlertString = buttonAlertString.join("\n");
         alert(buttonAlertString);
+        console.log(alertQuerys);
+        console.log("hola: " + concatUrl(paramLink, paramQuerys));
+
+        fetch(concatUrl(paramLink, paramQuerys))
+            .then(function (response) {
+                if (response.status < 400) {
+                    alert("Log in successful \n" + response.statusText);
+                } else {
+                    throw new Error(response.statusText);
+                }
+            })
+            .catch(function (error) {
+                alert("Log in error \n " + error)
+            })
     }
 }

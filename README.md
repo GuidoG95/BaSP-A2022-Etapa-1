@@ -37,3 +37,7 @@ git clone https://github.com/GuidoG95/BaSP-A2022-Etapa-1
 - Week 6: add validation to index, login and sign up pages using js
 
     To view this week's work [click here](https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html).
+
+- Week 7: add API validations to login and sign up pages using js
+
+    To view this week's work [click here](https://guidog95.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html).

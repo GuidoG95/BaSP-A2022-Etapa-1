@@ -1,5 +1,16 @@
 window.onload = function () {
 
+    var charsPass = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+
+    function validateSpecials(a) {
+        for (i = 0; i < a.length; i++) {
+            if (charsPass.indexOf(a.charAt(i)) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
     var buttonAlert = [];
     buttonAlert[0] = "Invalid email: Email is required";
     buttonAlert[1] = "Invalid password: Password is required";
@@ -48,7 +59,12 @@ window.onload = function () {
             password.classList.add("red-border");
             passwordAlert.innerHTML = "Password must have at least 8 characters.";
             password.insertAdjacentElement('afterend', passwordAlert);
-            buttonAlert[1] = "Invalid password: must have at least 8 characters";
+            buttonAlert[1] = "Invalid password: " + passwordAlert.innerHTML;
+        } else if (!validateSpecials(password.value)) {
+            password.classList.add("red-border");
+            passwordAlert.innerHTML = "Password can't contain special characters.";
+            password.insertAdjacentElement('afterend', passwordAlert);
+            buttonAlert[1] = "Invalid password: " + passwordAlert.innerHTML;
         } else {
             for (i = 0; i < passwordLength; i++) {
                 if (password.value.charAt(i) == password.value.charAt(i).toUpperCase() && isNaN(password.value.charAt(i)) && charUpper == 0) {
@@ -68,7 +84,7 @@ window.onload = function () {
                     password.classList.add("red-border");
                     passwordAlert.innerHTML = "Password must contain at least one uppercase, one lowercase and one number.";
                     password.insertAdjacentElement('afterend', passwordAlert);
-                    buttonAlert[1] = "Invalid password: " + password.value + " must contain at least one uppercase, one lowercase and one number.";
+                    buttonAlert[1] = "Invalid password: " + passwordAlert.innerHTML;
                 }
             }
         }
