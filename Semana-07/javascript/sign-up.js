@@ -468,8 +468,8 @@ window.onload = function () {
             buttonAlertString.push(buttonAlert[i]);
         }
         buttonAlertString = buttonAlertString.join("\n");
-        // alert(buttonAlertString);
-        console.log("hola: " + concatUrl(paramLink, paramQuerys));
+        alert(buttonAlertString);
+        console.log(concatUrl(paramLink, paramQuerys));
 
         fetch(concatUrl(paramLink, paramQuerys))
             .then(function (response) {
@@ -495,7 +495,7 @@ window.onload = function () {
                 }
             })
             .catch(function (error) {
-                // alert("Log in error \n " + error)
+                alert("Log in error \n " + error)
                 console.log("Log in error: \n");
                 console.log(error);
             })

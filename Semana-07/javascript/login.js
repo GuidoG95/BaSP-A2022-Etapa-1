@@ -98,6 +98,7 @@ window.onload = function () {
     }
 
     var logInButton = document.getElementById("log-in-button");
+    var error = []
 
     logInButton.onclick = function () {
         var buttonAlertString = [];
@@ -114,19 +115,19 @@ window.onload = function () {
         var fetchUrl = url.concat("", fetchQuerys);
         fetch(fetchUrl)
             .then(function (response) {
-                if (response.status < 400) {
-                    return response.json();
-                    alert("Log in successful \n" + response.statusText);
-                } else {
-                    throw new Error(response.statusText);
-                }
+                return response.json();
             })
             .then(function (jsonResponse) {
-                console.log(jsonResponse);
-                return jsonResponse.data;
-            })
-            .then(function (responseData) {
-                console.log(responseData);
+                if (jsonResponse.success === true) {
+                    alert("Login success: \n" + jsonResponse.msg);
+                } else if (!jsonResponse.errors) {
+                    throw new Error(jsonResponse.msg);
+                } else {
+                    for (var i = 0; i < jsonResponse.errors.length; i++) {
+                        error[i] = jsonResponse.errors[i].msg;
+                    }
+                    throw new Error(error);
+                }
             })
             .catch(function (error) {
                 alert("Log in error \n " + error);
