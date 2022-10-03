@@ -15,7 +15,7 @@ window.onload = function () {
     var alertQuerys = [];
     var paramLink = "https://basp-m2022-api-rest-server.herokuapp.com/signup?";
     var paramQuerys = [];
-    var alert = document.createElement ("p");
+    var alert = document.createElement("p");
 
     var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 
@@ -460,26 +460,44 @@ window.onload = function () {
         return a + c;
     }
 
+    var error = [];
+
     signUpButton.onclick = function () {
         var buttonAlertString = [];
         for (i = 0; i < buttonAlert.length; i++) {
             buttonAlertString.push(buttonAlert[i]);
         }
         buttonAlertString = buttonAlertString.join("\n");
-        alert(buttonAlertString);
-        console.log(alertQuerys);
+        // alert(buttonAlertString);
         console.log("hola: " + concatUrl(paramLink, paramQuerys));
 
         fetch(concatUrl(paramLink, paramQuerys))
             .then(function (response) {
-                if (response.status < 400) {
-                    alert("Log in successful \n" + response.statusText);
+                return response.json();
+            })
+            .then(function (jsonResponse) {
+                if (jsonResponse.success === true) {
+                    console.log(jsonResponse.msg);
+                    return jsonResponse.data;
                 } else {
-                    throw new Error(response.statusText);
+                    console.log(jsonResponse.errors);
+                    for (var i = 0; i < jsonResponse.errors.length; i++) {
+                        // console.log(jsonResponse.errors[i].msg);
+                        error[i] = jsonResponse.errors[i].msg;
+                        throw new Error(error);
+                    }
+                }
+            })
+            .then(function (responseData) {
+                console.log(responseData);
+                for (i = 0; i < responseData.length; i++) {
+                    console.log(responseData[i]);
                 }
             })
             .catch(function (error) {
-                alert("Log in error \n " + error)
+                // alert("Log in error \n " + error)
+                console.log("Log in error: \n");
+                console.log(error);
             })
     }
 }

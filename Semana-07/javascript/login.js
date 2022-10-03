@@ -115,13 +115,21 @@ window.onload = function () {
         fetch(fetchUrl)
             .then(function (response) {
                 if (response.status < 400) {
+                    return response.json();
                     alert("Log in successful \n" + response.statusText);
                 } else {
                     throw new Error(response.statusText);
                 }
             })
+            .then(function (jsonResponse) {
+                console.log(jsonResponse);
+                return jsonResponse.data;
+            })
+            .then(function (responseData) {
+                console.log(responseData);
+            })
             .catch(function (error) {
-                alert("Log in error \n " + error)
+                alert("Log in error \n " + error);
             })
     }
 }
