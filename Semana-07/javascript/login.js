@@ -126,11 +126,12 @@ window.onload = function () {
                     for (var i = 0; i < jsonResponse.errors.length; i++) {
                         error[i] = jsonResponse.errors[i].msg;
                     }
-                    throw new Error(error);
+                    var errorString = error.join("\n");
+                    throw new Error(errorString);
                 }
             })
             .catch(function (error) {
-                alert("Log in error \n " + error);
+                alert(error);
             })
     }
 }

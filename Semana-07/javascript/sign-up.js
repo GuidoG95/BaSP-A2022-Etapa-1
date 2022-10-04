@@ -12,10 +12,8 @@ window.onload = function () {
     buttonAlert[8] = "Invalid email: Email is required";
     buttonAlert[9] = "Invalid password: Password is required";
     buttonAlert[10] = "Invalid confirm password: Confirm password is required";
-    var alertQuerys = [];
     var paramLink = "https://basp-m2022-api-rest-server.herokuapp.com/signup?";
     var paramQuerys = [];
-    var alert = document.createElement("p");
 
     var chars = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ ";
 
@@ -453,13 +451,42 @@ window.onload = function () {
         confirmPassword.classList.remove("green-border", "red-border");
     }
 
-    var signUpButton = document.getElementById("sign-up-button");
+    if (localStorage.getItem('id') != null) {
+        firstName.value = localStorage.getItem("name");
+        lastName.value = localStorage.getItem("lastName");
+        documentNumber.value = localStorage.getItem("dni");
+        date = localStorage.getItem("dob");
+        dateOfBirthFormat = date.substring(6) + "-" + date.substring(0, 2) + "-" + date.substring(3, 5);
+        dateOfBirth.value = dateOfBirthFormat;
+        phoneNumber.value = localStorage.getItem("phone");
+        address.value = localStorage.getItem("address");
+        city.value = localStorage.getItem("city");
+        postalCode.value = localStorage.getItem("zip");
+        email.value = localStorage.getItem("email");
+        password.value = localStorage.getItem("password");
+        confirmPassword.value = localStorage.getItem("password");
+    }
+
+    function storeLocalStorage(data) {
+        localStorage.setItem("id", data.id);
+        localStorage.setItem("name", data.name);
+        localStorage.setItem("lastName", data.lastName);
+        localStorage.setItem("dni", data.dni);
+        localStorage.setItem("dob", data.dob);
+        localStorage.setItem("phone", data.phone);
+        localStorage.setItem("address", data.address);
+        localStorage.setItem("city", data.city);
+        localStorage.setItem("zip", data.zip);
+        localStorage.setItem("email", data.email);
+        localStorage.setItem("password", data.password);
+    }
 
     function concatUrl(a, b) {
         var c = b.join("&");
         return a + c;
     }
 
+    var signUpButton = document.getElementById("sign-up-button");
     var error = [];
 
     signUpButton.onclick = function () {
@@ -476,16 +503,16 @@ window.onload = function () {
                 return response.json();
             })
             .then(function (jsonResponse) {
-                if (jsonResponse.success === true) {
+                if (jsonResponse.success) {
                     console.log(jsonResponse.msg);
-                    return jsonResponse.data;
+                    storeLocalStorage(data);
+                    return data = jsonResponse.data;
                 } else {
-                    console.log(jsonResponse.errors);
                     for (var i = 0; i < jsonResponse.errors.length; i++) {
-                        // console.log(jsonResponse.errors[i].msg);
                         error[i] = jsonResponse.errors[i].msg;
-                        throw new Error(error);
                     }
+                    var errorString = error.join("\n");
+                    throw new Error(errorString);
                 }
             })
             .then(function (responseData) {
@@ -496,7 +523,6 @@ window.onload = function () {
             })
             .catch(function (error) {
                 alert("Log in error \n " + error)
-                console.log("Log in error: \n");
                 console.log(error);
             })
     }
