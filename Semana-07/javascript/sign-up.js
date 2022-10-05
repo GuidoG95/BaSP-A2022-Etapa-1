@@ -518,6 +518,17 @@ window.onload = function () {
     var error = [];
 
     signUpButton.onclick = function () {
+        firstName.onblur();
+        lastName.onblur();
+        documentNumber.onblur();
+        dateOfBirth.onblur();
+        phoneNumber.onblur();
+        address.onblur();
+        city.onblur();
+        postalCode.onblur();
+        email.onblur();
+        password.onblur();
+        confirmPassword.onblur();
         var buttonAlertString = [];
         for (i = 0; i < buttonAlert.length; i++) {
             buttonAlertString.push(buttonAlert[i]);
