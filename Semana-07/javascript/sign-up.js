@@ -37,6 +37,40 @@ window.onload = function () {
         return true;
     }
 
+    var letterValid = "abcdefghijklmnñopqrstuvwxyzABCDEFGHIJKLMNÑOPQRSTUVWXYZ";
+    var spaceChar = " ";
+
+    function validateAddress(a) {
+        var letter = 0;
+        var num = 0;
+        var space = 0;
+        for (i = 0; i < a.length; i++) {
+            if (letterValid.indexOf(a.charAt(i)) >= 0) {
+                letter++;
+            }
+            if (!isNaN(a.charAt(i)) && a.charAt(i) != " ") {
+                num++;
+            }
+            if (spaceChar.indexOf(a.charAt(i)) >= 0) {
+                space++;
+            }
+        }
+        if (letter > 0 && num > 0 && space > 0) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function validateCity(a) {
+        for (i = 0; i < a.length; i++) {
+            if (letterValid.indexOf(a.charAt(i)) >= 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
     function validateNumbers(a) {
         for (i = 0; i < a.length; i++) {
             if (isNaN(a.charAt(i))) {
@@ -57,7 +91,7 @@ window.onload = function () {
             firstName.insertAdjacentElement('afterend', firstNameAlert);
             buttonAlert[0] = "Invalid name: " + firstNameAlert.innerHTML;
         } else if (firstNameLength >= 3) {
-            if (validateLetters(firstName.value) == true) {
+            if (validateLetters(firstName.value)) {
                 firstName.classList.add("green-border");
                 firstNameAlert.innerHTML = "";
                 firstName.insertAdjacentElement('afterend', firstNameAlert);
@@ -92,7 +126,7 @@ window.onload = function () {
             lastName.insertAdjacentElement('afterend', lastNameAlert);
             buttonAlert[1] = "Invalid last name: " + lastNameAlert.innerHTML;
         } else if (lastNameLength >= 3) {
-            if (validateLetters(lastName.value) == true) {
+            if (validateLetters(lastName.value)) {
                 lastName.classList.add("green-border");
                 lastNameAlert.innerHTML = "";
                 lastName.insertAdjacentElement('afterend', lastNameAlert);
@@ -122,7 +156,7 @@ window.onload = function () {
     documentNumber.onblur = function () {
         if (documentNumber.value.length >= 7) {
             if (documentNumber.value.indexOf(" ") < 0) {
-                if (validateNumbers(documentNumber.value) == true) {
+                if (validateNumbers(documentNumber.value)) {
                     documentNumber.classList.add("green-border");
                     documentAlert.innerHTML = "";
                     documentNumber.insertAdjacentElement('afterend', documentAlert);
@@ -186,7 +220,7 @@ window.onload = function () {
     phoneNumber.onblur = function () {
         if (phoneNumber.value.length == 10) {
             if (phoneNumber.value.indexOf(" ") < 0) {
-                if (validateNumbers(phoneNumber.value) == true) {
+                if (validateNumbers(phoneNumber.value)) {
                     phoneNumber.classList.add("green-border");
                     phoneAlert.innerHTML = "";
                     phoneNumber.insertAdjacentElement('afterend', phoneAlert);
@@ -226,33 +260,34 @@ window.onload = function () {
     var spacePos = 0;
 
     address.onblur = function () {
-        if (!address.value.length) {
+        var addressLength = address.value.length;
+        if (!addressLength) {
             address.classList.add("red-border");
-            addressAlert.innerHTML = "address is required.";
+            addressAlert.innerHTML = "Address is required.";
             address.insertAdjacentElement('afterend', addressAlert);
             buttonAlert[5] = "Invalid address: " + addressAlert.innerHTML;
-        } else if (address.value.length < 5) {
+        } else if (addressLength < 5) {
             address.classList.add("red-border");
-            addressAlert.innerHTML = "address must have at least 5 characters.";
+            addressAlert.innerHTML = "Address must have at least 5 characters.";
             address.insertAdjacentElement('afterend', addressAlert);
             buttonAlert[5] = "Invalid address: " + addressAlert.innerHTML;
-        } else {
-            for (i = 0; i < address.value.length; i++) {
-                if (address.value.charAt(i) == " ") {
-                    spacePos = address.value.indexOf(" ");
-                }
-                if (spacePos > 0 && spacePos < address.value.length - 1) {
-                    address.classList.add("green-border");
-                    addressAlert.innerHTML = "";
-                    address.insertAdjacentElement('afterend', addressAlert);
-                    buttonAlert[5] = "address: " + address.value;
-                } else {
-                    address.classList.add("red-border");
-                    addressAlert.innerHTML = "address must have letters, numbers and at least one space in the middle.";
-                    address.insertAdjacentElement('afterend', addressAlert);
-                    buttonAlert[5] = "Invalid address: " + addressAlert.innerHTML;
-                }
+        } else if (address.value.charAt(0) != " " && address.value.charAt(addressLength - 1) != " ") {
+            if (validateAddress(address.value)) {
+                address.classList.add("green-border");
+                addressAlert.innerHTML = "";
+                address.insertAdjacentElement('afterend', addressAlert);
+                buttonAlert[5] = "address: " + address.value;
+            } else {
+                address.classList.add("red-border");
+                addressAlert.innerHTML = "Address must contain only letters, numbers and a space between.";
+                address.insertAdjacentElement('afterend', addressAlert);
+                buttonAlert[5] = "Invalid address: " + addressAlert.innerHTML;
             }
+        } else {
+            address.classList.add("red-border");
+            addressAlert.innerHTML = "Space can't be at the start or end of the address.";
+            address.insertAdjacentElement('afterend', addressAlert);
+            buttonAlert[5] = "Invalid address: " + addressAlert.innerHTML;
         }
         paramQuerys[5] = "address=" + address.value;
     }
@@ -269,17 +304,24 @@ window.onload = function () {
             city.classList.add("red-border");
             cityAlert.innerHTML = "City is required.";
             city.insertAdjacentElement('afterend', cityAlert);
-            city[6] = "City: " + cityAlert.innerHTML;
+            buttonAlert[6] = "City: " + cityAlert.innerHTML;
         } else if (city.value.length >= 3) {
-            city.classList.add("green-border");
-            cityAlert.innerHTML = "";
-            city.insertAdjacentElement('afterend', city);
-            city[6] = "City: " + city.value;
+            if (validateCity(city.value)) {
+                city.classList.add("green-border");
+                cityAlert.innerHTML = "";
+                city.insertAdjacentElement('afterend', city);
+                buttonAlert[6] = "City: " + city.value;
+            } else {
+                city.classList.add("red-border");
+                cityAlert.innerHTML = "City must contain letters.";
+                city.insertAdjacentElement('afterend', cityAlert);
+                buttonAlert[6] = "City: " + cityAlert.innerHTML;
+            }
         } else {
             city.classList.add("red-border");
             cityAlert.innerHTML = "City must be at least 3 characters long.";
             city.insertAdjacentElement('afterend', cityAlert);
-            city[6] = "City: " + cityAlert.innerHTML;
+            buttonAlert[6] = "City: " + cityAlert.innerHTML;
         }
         paramQuerys[6] = "city=" + city.value;
     }
@@ -294,7 +336,7 @@ window.onload = function () {
     postalCode.onblur = function () {
         if (postalCode.value.length >= 4 && postalCode.value.length <= 5) {
             if (postalCode.value.indexOf(" ") < 0) {
-                if (validateNumbers(postalCode.value) == true) {
+                if (validateNumbers(postalCode.value)) {
                     postalCode.classList.add("green-border");
                     postalCodeAlert.innerHTML = "";
                     postalCode.insertAdjacentElement('afterend', postalCodeAlert);
@@ -467,20 +509,6 @@ window.onload = function () {
         confirmPassword.value = localStorage.getItem("password");
     }
 
-    function storeLocalStorage(data) {
-        localStorage.setItem("id", data.id);
-        localStorage.setItem("name", data.name);
-        localStorage.setItem("lastName", data.lastName);
-        localStorage.setItem("dni", data.dni);
-        localStorage.setItem("dob", data.dob);
-        localStorage.setItem("phone", data.phone);
-        localStorage.setItem("address", data.address);
-        localStorage.setItem("city", data.city);
-        localStorage.setItem("zip", data.zip);
-        localStorage.setItem("email", data.email);
-        localStorage.setItem("password", data.password);
-    }
-
     function concatUrl(a, b) {
         var c = b.join("&");
         return a + c;
@@ -505,7 +533,7 @@ window.onload = function () {
             .then(function (jsonResponse) {
                 if (jsonResponse.success) {
                     console.log(jsonResponse.msg);
-                    storeLocalStorage(data);
+                    alert(jsonResponse.msg);
                     return data = jsonResponse.data;
                 } else {
                     for (var i = 0; i < jsonResponse.errors.length; i++) {
@@ -516,6 +544,7 @@ window.onload = function () {
                 }
             })
             .then(function (responseData) {
+                storeLocalStorage(data);
                 console.log(responseData);
                 for (i = 0; i < responseData.length; i++) {
                     console.log(responseData[i]);
@@ -525,5 +554,19 @@ window.onload = function () {
                 alert("Log in error \n " + error)
                 console.log(error);
             })
+
+        function storeLocalStorage(data) {
+            localStorage.setItem("id", data.id);
+            localStorage.setItem("name", data.name);
+            localStorage.setItem("lastName", data.lastName);
+            localStorage.setItem("dni", data.dni);
+            localStorage.setItem("dob", data.dob);
+            localStorage.setItem("phone", data.phone);
+            localStorage.setItem("address", data.address);
+            localStorage.setItem("city", data.city);
+            localStorage.setItem("zip", data.zip);
+            localStorage.setItem("email", data.email);
+            localStorage.setItem("password", data.password);
+        }
     }
 }
